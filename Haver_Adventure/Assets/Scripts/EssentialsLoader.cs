@@ -5,7 +5,7 @@ using UnityEngine;
 public class EssentialsLoader : MonoBehaviour {
     // Elements
     public GameObject player;
-    public GameObject fadeScreen;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start() {
@@ -16,7 +16,7 @@ public class EssentialsLoader : MonoBehaviour {
         }
 
         if(FadeTransition.selfReference== null) {
-            FadeTransition clone = Instantiate(fadeScreen).GetComponent<FadeTransition>();
+            FadeTransition clone = Instantiate(canvas).GetComponent<FadeTransition>();
             FadeTransition.selfReference = clone;
         }
     }
