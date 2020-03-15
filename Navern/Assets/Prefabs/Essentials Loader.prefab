@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 5108737548995079685, guid: 9f992aa663e37be479e29c1fed0e742c, type: 3}
   canvas: {fileID: 3543795845662976481, guid: 0726d25f376aa5d4ca8601d4ec145911, type: 3}
+  partyManager: {fileID: 5076121133446921606, guid: d02858e6b74868a40bdf27c0062807f7,
+    type: 3}

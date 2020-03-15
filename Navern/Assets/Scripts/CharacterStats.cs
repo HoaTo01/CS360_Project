@@ -23,7 +23,7 @@ public class CharacterStats : MonoBehaviour {
     public int currentMP;
     public int currentEXP;
 
-    public string swordEquipment;
+    public string weaponEquipment;
     public string braceletEquipment;
     public string ringEquipment;
     public string shoesEquipment;
@@ -43,7 +43,8 @@ public class CharacterStats : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey(KeyCode.K)) {
+        // For testing
+        if (Input.GetKey(KeyCode.B)) {
             AddEXP(10000);
         }
     }
@@ -57,16 +58,17 @@ public class CharacterStats : MonoBehaviour {
             // Increase the character's level and stats
             characterLevel++;
 
-            maxHP += Mathf.FloorToInt(maxHP * 0.2f);
+            maxHP += Mathf.FloorToInt(maxHP * 0.05f);
             currentHP = maxHP;
-            maxMP += Mathf.FloorToInt(maxMP * 0.2f);
+            maxMP += Mathf.FloorToInt(maxMP * 0.05f);
             currentMP = maxMP;
-            agility += Mathf.FloorToInt(agility * 0.2f);
+            agility += Mathf.FloorToInt(agility * 0.05f);
             numberOfDiceFaces++;
 
             if (characterLevel % 5 == 0 && diceLevel <= maxDiceLevel) {
                 diceLevel++;
                 diceCoefficient += 0.5f;
+                numberOfDiceFaces++;
             }
         }
 

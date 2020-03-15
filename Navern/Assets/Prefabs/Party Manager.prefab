@@ -1,0 +1,381 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5076121132702726299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121132702726297}
+  - component: {fileID: 5076121132702726298}
+  m_Layer: 0
+  m_Name: Navern's Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5076121132702726297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121132702726299}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5076121133446921604}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121132702726298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121132702726299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Navern
+  characterLevel: 1
+  maxCharacterLevel: 30
+  baseEXP: 1000
+  expToNextLevel: 
+  element: Lightning
+  maxHP: 30
+  maxMP: 17
+  agility: 25
+  diceLevel: 1
+  maxDiceLevel: 10
+  numberOfDiceFaces: 6
+  diceCoefficient: 1
+  currentHP: 30
+  currentMP: 17
+  currentEXP: 0
+  weaponEquipment: 
+  braceletEquipment: 
+  ringEquipment: 
+  shoesEquipment: 
+  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+    type: 3}
+--- !u!1 &5076121132910671392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121132910671399}
+  - component: {fileID: 5076121132910671398}
+  m_Layer: 0
+  m_Name: Minka's Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5076121132910671399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121132910671392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.17000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5076121133446921604}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121132910671398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121132910671392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Minka
+  characterLevel: 4
+  maxCharacterLevel: 30
+  baseEXP: 1000
+  expToNextLevel: 
+  element: Fire
+  maxHP: 24
+  maxMP: 51
+  agility: 17
+  diceLevel: 3
+  maxDiceLevel: 10
+  numberOfDiceFaces: 8
+  diceCoefficient: 2
+  currentHP: 24
+  currentMP: 51
+  currentEXP: 0
+  weaponEquipment: 
+  braceletEquipment: 
+  ringEquipment: 
+  shoesEquipment: 
+  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+    type: 3}
+--- !u!1 &5076121133094216685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121133094216684}
+  - component: {fileID: 5076121133094216691}
+  m_Layer: 0
+  m_Name: Saol's Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5076121133094216684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133094216685}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.17000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5076121133446921604}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121133094216691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133094216685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Saol
+  characterLevel: 5
+  maxCharacterLevel: 30
+  baseEXP: 1000
+  expToNextLevel: 
+  element: Earth
+  maxHP: 51
+  maxMP: 22
+  agility: 26
+  diceLevel: 3
+  maxDiceLevel: 10
+  numberOfDiceFaces: 8
+  diceCoefficient: 2
+  currentHP: 51
+  currentMP: 22
+  currentEXP: 0
+  weaponEquipment: 
+  braceletEquipment: 
+  ringEquipment: 
+  shoesEquipment: 
+  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+    type: 3}
+--- !u!1 &5076121133446921606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121133446921604}
+  - component: {fileID: 5076121133446921605}
+  m_Layer: 0
+  m_Name: Party Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5076121133446921604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133446921606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11981137, y: 1.0934652, z: -206.69727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5076121132702726297}
+  - {fileID: 5076121132910671399}
+  - {fileID: 5076121133535595085}
+  - {fileID: 5076121134061882277}
+  - {fileID: 5076121133094216684}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121133446921605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133446921606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad251cd646383a48a6bf71117faf868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  membersStats:
+  - {fileID: 5076121132702726298}
+  - {fileID: 5076121132910671398}
+  - {fileID: 5076121133535595084}
+  - {fileID: 5076121134061882276}
+  - {fileID: 5076121133094216691}
+--- !u!1 &5076121133535595086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121133535595085}
+  - component: {fileID: 5076121133535595084}
+  m_Layer: 0
+  m_Name: Kolo's Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5076121133535595085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133535595086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.17000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5076121133446921604}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121133535595084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121133535595086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Kolo
+  characterLevel: 1
+  maxCharacterLevel: 30
+  baseEXP: 1000
+  expToNextLevel: 
+  element: Lightning
+  maxHP: 24
+  maxMP: 12
+  agility: 18
+  diceLevel: 2
+  maxDiceLevel: 10
+  numberOfDiceFaces: 7
+  diceCoefficient: 1.5
+  currentHP: 24
+  currentMP: 12
+  currentEXP: 0
+  weaponEquipment: 
+  braceletEquipment: 
+  ringEquipment: 
+  shoesEquipment: 
+  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+    type: 3}
+--- !u!1 &5076121134061882278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5076121134061882277}
+  - component: {fileID: 5076121134061882276}
+  m_Layer: 0
+  m_Name: Didio's Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5076121134061882277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121134061882278}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -0.17000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5076121133446921604}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5076121134061882276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076121134061882278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Didio
+  characterLevel: 1
+  maxCharacterLevel: 30
+  baseEXP: 1000
+  expToNextLevel: 
+  element: Water
+  maxHP: 22
+  maxMP: 25
+  agility: 16
+  diceLevel: 1
+  maxDiceLevel: 10
+  numberOfDiceFaces: 6
+  diceCoefficient: 1
+  currentHP: 22
+  currentMP: 25
+  currentEXP: 0
+  weaponEquipment: 
+  braceletEquipment: 
+  ringEquipment: 
+  shoesEquipment: 
+  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+    type: 3}
