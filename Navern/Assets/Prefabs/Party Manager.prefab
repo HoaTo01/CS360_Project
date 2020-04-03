@@ -46,7 +46,7 @@ MonoBehaviour:
   characterName: Navern
   characterLevel: 1
   maxCharacterLevel: 30
-  baseEXP: 1000
+  baseEXP: 100
   expToNextLevel: 
   element: Lightning
   maxHP: 30
@@ -111,7 +111,7 @@ MonoBehaviour:
   characterName: Minka
   characterLevel: 4
   maxCharacterLevel: 30
-  baseEXP: 1000
+  baseEXP: 100
   expToNextLevel: 
   element: Fire
   maxHP: 24
@@ -176,7 +176,7 @@ MonoBehaviour:
   characterName: Saol
   characterLevel: 5
   maxCharacterLevel: 30
-  baseEXP: 1000
+  baseEXP: 100
   expToNextLevel: 
   element: Earth
   maxHP: 51
@@ -295,7 +295,7 @@ MonoBehaviour:
   characterName: Kolo
   characterLevel: 1
   maxCharacterLevel: 30
-  baseEXP: 1000
+  baseEXP: 100
   expToNextLevel: 
   element: Lightning
   maxHP: 24
@@ -360,7 +360,7 @@ MonoBehaviour:
   characterName: Didio
   characterLevel: 1
   maxCharacterLevel: 30
-  baseEXP: 1000
+  baseEXP: 100
   expToNextLevel: 
   element: Water
   maxHP: 22
