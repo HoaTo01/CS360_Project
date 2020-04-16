@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3963742248280157371
+--- !u!1 &686918059426672851
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4972446928921156138}
-  - component: {fileID: 4184085993028345498}
+  - component: {fileID: 7430872728570568380}
+  - component: {fileID: 555694959179573842}
   m_Layer: 0
-  m_Name: Essentials Loader
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4972446928921156138
+--- !u!4 &7430872728570568380
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3963742248280157371}
+  m_GameObject: {fileID: 686918059426672851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41403162, y: 2.5372252, z: -190.85504}
+  m_LocalPosition: {x: 289.21646, y: 225.53706, z: -1166.0625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4184085993028345498
+--- !u!114 &555694959179573842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3963742248280157371}
+  m_GameObject: {fileID: 686918059426672851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bec3e8e521388f46ac0eb4da1e91df7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4167bbea0574cb1468907f6465caf4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5108737548995079685, guid: 9f992aa663e37be479e29c1fed0e742c, type: 3}
-  canvas: {fileID: 3543795845662976481, guid: 0726d25f376aa5d4ca8601d4ec145911, type: 3}
-  partyManager: {fileID: 5076121133446921606, guid: d02858e6b74868a40bdf27c0062807f7,
-    type: 3}
-  gameManager: {fileID: 686918059426672851, guid: 33f8d622b793186478929aa409894fc3,
-    type: 3}
+  gameplayMenuIsOpened: 0
+  dialogIsOpened: 0
+  isInTransition: 0

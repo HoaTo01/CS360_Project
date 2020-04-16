@@ -18,6 +18,9 @@ public class NewSceneTile : MonoBehaviour {
         // Fade from black to new area
         if(FadeTransition.selfReference) {
             FadeTransition.selfReference.fadeFromBlack();
+
+            // Let the Game Manager knows that it is not in transition.
+            GameManager.selfReference.isInTransition = false;
         }
     }
 

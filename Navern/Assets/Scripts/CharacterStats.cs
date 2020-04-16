@@ -24,9 +24,14 @@ public class CharacterStats : MonoBehaviour {
     public int currentEXP;
 
     public string weaponEquipment;
-    public string braceletEquipment;
+    public string necklaceEquipment;
     public string ringEquipment;
     public string shoesEquipment;
+
+    public Sprite weaponImage;
+    public Sprite ringImage;
+    public Sprite necklaceImage;
+    public Sprite shoesImage;
 
     public Sprite characterSprite;
 

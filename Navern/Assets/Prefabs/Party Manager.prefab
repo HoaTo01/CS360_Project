@@ -130,71 +130,6 @@ MonoBehaviour:
   shoesEquipment: 
   characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
     type: 3}
---- !u!1 &5076121133094216685
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5076121133094216684}
-  - component: {fileID: 5076121133094216691}
-  m_Layer: 0
-  m_Name: Saol's Stats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5076121133094216684
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5076121133094216685}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -0.17000002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5076121133446921604}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5076121133094216691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5076121133094216685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988f68ccc5cfee2419bd394f703a3bda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Saol
-  characterLevel: 5
-  maxCharacterLevel: 30
-  baseEXP: 100
-  expToNextLevel: 
-  element: Earth
-  maxHP: 51
-  maxMP: 22
-  agility: 26
-  diceLevel: 3
-  maxDiceLevel: 10
-  numberOfDiceFaces: 8
-  diceCoefficient: 2
-  currentHP: 51
-  currentMP: 22
-  currentEXP: 0
-  weaponEquipment: 
-  braceletEquipment: 
-  ringEquipment: 
-  shoesEquipment: 
-  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
-    type: 3}
 --- !u!1 &5076121133446921606
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +162,6 @@ Transform:
   - {fileID: 5076121132910671399}
   - {fileID: 5076121133535595085}
   - {fileID: 5076121134061882277}
-  - {fileID: 5076121133094216684}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,7 +182,6 @@ MonoBehaviour:
   - {fileID: 5076121132910671398}
   - {fileID: 5076121133535595084}
   - {fileID: 5076121134061882276}
-  - {fileID: 5076121133094216691}
 --- !u!1 &5076121133535595086
 GameObject:
   m_ObjectHideFlags: 0

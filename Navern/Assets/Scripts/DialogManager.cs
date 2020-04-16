@@ -38,8 +38,8 @@ public class DialogManager : MonoBehaviour {
                 if (currentLinePos >= dialogLines.Length) {
                     dialogBox.SetActive(false);
 
-                    // Enable the player to move again after the dialog
-                    PlayerControl.selfReference.canMove = true;
+                    // Let the Game Manager knows that the dialog box is closed.
+                    GameManager.selfReference.dialogIsOpened = false;
                 }
 
                 else {
@@ -92,8 +92,8 @@ public class DialogManager : MonoBehaviour {
 
         nameBox.SetActive(isPerson);
 
-        // Prevent the player from moving when dialog is showing
-        PlayerControl.selfReference.canMove = false;
+        // Let the Game Manager knows that dialog box is opened.
+        GameManager.selfReference.dialogIsOpened = true;
     }
 
     // Check the dialog lines for names to use

@@ -7,6 +7,7 @@ public class EssentialsLoader : MonoBehaviour {
     public GameObject player;
     public GameObject canvas;
     public GameObject partyManager;
+    public GameObject gameManager;
 
     // Start is called before the first frame update
     void Start() {
@@ -24,6 +25,11 @@ public class EssentialsLoader : MonoBehaviour {
         if (PartyManager.selfReference == null) {
             PartyManager clone = Instantiate(partyManager).GetComponent<PartyManager>();
             PartyManager.selfReference = clone;
+        }
+
+        if (GameManager.selfReference == null) {
+            GameManager clone = Instantiate(gameManager).GetComponent<GameManager>();
+            GameManager.selfReference = clone;
         }
 
         // For testing

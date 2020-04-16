@@ -34,6 +34,10 @@ public class NewSceneEntrance : MonoBehaviour {
         // Fade into new area
         if (collision.tag == "Player") {
             isLoadAfterFade = true;
+
+            // Let the Game Manager knows that it is in transition.
+            GameManager.selfReference.isInTransition = true;
+
             FadeTransition.selfReference.fadeToBlack();
 
             PlayerControl.selfReference.transitEntranceName = transitEntranceName;

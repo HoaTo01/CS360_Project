@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 494}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 244, y: 444}
   m_MaxSize: {x: 4004, y: 8044}
   vertical: 1
-  controlID: 81
+  controlID: 108
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 957, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 183
+  controlID: 182
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -6484
+  m_LastSelectedObjectID: -2046
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -478,9 +478,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 56fbffff
-      m_LastClickedID: -1194
-      m_ExpandedIDs: 68fbffff
+      m_SelectedIDs: 4cfbffff
+      m_LastClickedID: -1204
+      m_ExpandedIDs: aaf8ffff32fbffff50fbffff68fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -581,20 +581,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Graphics/Sprites
+    - Assets/Graphics/UI
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Graphics/Sprites
+  - Assets/Graphics/UI
   m_LastFoldersGridSize: 53
   m_LastProjectPath: D:\MK\Unity_Projects\CS360_Project\Navern
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d03d0000
-    m_LastClickedID: 15824
-    m_ExpandedIDs: 00000000562d000036420000104a000000ca9a3b
+    m_SelectedIDs: be410000
+    m_LastClickedID: 16830
+    m_ExpandedIDs: 000000005a2d00003c420000504a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -622,7 +622,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000562d000036420000104a0000
+    m_ExpandedIDs: 000000005a2d00003c420000504a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -649,8 +649,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 6c320000e22d00009cdeffffec2d000052310000564f00004045000044450000f2320000dea200007a330000c43000001842000000000000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: 6c320000e22d00009cdeffffec2d000052310000564f00004045000044450000f2320000dea200007a330000c43000001842000000000000442f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -795,9 +795,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 383.95538, y: 205.18753, z: -875.625}
+    m_Target: {x: 335.4702, y: 182.10034, z: -588.05}
     speed: 2
-    m_Value: {x: 383.95538, y: 205.18753, z: -875.625}
+    m_Value: {x: 335.4702, y: 182.10034, z: -588.05}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -830,9 +830,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 449.25592
+    m_Target: 403.04984
     speed: 2
-    m_Value: 449.25592
+    m_Value: 403.04984
   m_Ortho:
     m_Target: 1
     speed: 2
