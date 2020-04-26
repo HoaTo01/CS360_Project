@@ -56,13 +56,17 @@ MonoBehaviour:
   maxDiceLevel: 10
   numberOfDiceFaces: 6
   diceCoefficient: 1
-  currentHP: 30
+  currentHP: 15
   currentMP: 17
   currentEXP: 0
   weaponEquipment: 
-  braceletEquipment: 
+  necklaceEquipment: 
   ringEquipment: 
   shoesEquipment: 
+  weaponImage: {fileID: 0}
+  ringImage: {fileID: 0}
+  necklaceImage: {fileID: 0}
+  shoesImage: {fileID: 0}
   characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
     type: 3}
 --- !u!1 &5076121132910671392
@@ -125,9 +129,13 @@ MonoBehaviour:
   currentMP: 51
   currentEXP: 0
   weaponEquipment: 
-  braceletEquipment: 
+  necklaceEquipment: 
   ringEquipment: 
   shoesEquipment: 
+  weaponImage: {fileID: 0}
+  ringImage: {fileID: 0}
+  necklaceImage: {fileID: 0}
+  shoesImage: {fileID: 0}
   characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
     type: 3}
 --- !u!1 &5076121133446921606
@@ -242,9 +250,13 @@ MonoBehaviour:
   currentMP: 12
   currentEXP: 0
   weaponEquipment: 
-  braceletEquipment: 
+  necklaceEquipment: 
   ringEquipment: 
   shoesEquipment: 
+  weaponImage: {fileID: 0}
+  ringImage: {fileID: 0}
+  necklaceImage: {fileID: 0}
+  shoesImage: {fileID: 0}
   characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
     type: 3}
 --- !u!1 &5076121134061882278
@@ -307,8 +319,12 @@ MonoBehaviour:
   currentMP: 25
   currentEXP: 0
   weaponEquipment: 
-  braceletEquipment: 
+  necklaceEquipment: 
   ringEquipment: 
   shoesEquipment: 
+  weaponImage: {fileID: 0}
+  ringImage: {fileID: 0}
+  necklaceImage: {fileID: 0}
+  shoesImage: {fileID: 0}
   characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
     type: 3}

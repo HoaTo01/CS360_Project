@@ -17,7 +17,7 @@ public class CharacterStats : MonoBehaviour {
     public int diceLevel;
     public int maxDiceLevel = 10;
     public int numberOfDiceFaces;
-    public float diceCoefficient;
+    public double diceCoefficient;
 
     public int currentHP;
     public int currentMP;
@@ -48,10 +48,7 @@ public class CharacterStats : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // For testing
-        if (Input.GetKey(KeyCode.B)) {
-            AddEXP(10000);
-        }
+        
     }
 
     // Add exp

@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class GameplayMenu : MonoBehaviour {
     // Elements
+    public static GameplayMenu selfReference;
+
     public GameObject gameplayMenu;
     public GameObject[] windows;
     public GameObject[] currentSelectArrows;
     public int currentArrowPos;
 
+    [Header("Party Info")]
     public CharacterStats[] membersStats;
 
     public Text[] charactersName, hpText, mpText, levelText, expText,
@@ -20,9 +23,18 @@ public class GameplayMenu : MonoBehaviour {
 
     public GameObject[] charStatsBox;
 
+    [Header("Inventory Elements")]
+    public ItemButton[] itemButtons;
+    public string selectedItem;
+    public Item activeItem;
+    public Text itemName, itemDescription, useButtonText;
+
+    public GameObject itemChoosingCharMenu;
+    public Text[] itemChoosingCharNames;
+
     // Start is called before the first frame update
     void Start() {
-
+        selfReference = this;
     }
 
     // Update is called once per frame
@@ -36,7 +48,7 @@ public class GameplayMenu : MonoBehaviour {
 
             else {
                 // Update the stats
-                updateStatsDisplay();
+                UpdateStatsDisplay();
 
                 // Set the current select arrow to the first button (Inventory).    
                 currentSelectArrows[currentArrowPos].SetActive(false);
@@ -62,7 +74,7 @@ public class GameplayMenu : MonoBehaviour {
     }
 
     // Update the stats display in the Party UI.
-    private void updateStatsDisplay() {
+    public void UpdateStatsDisplay() {
         membersStats = PartyManager.selfReference.membersStats;
 
         for (int i = 0; i < membersStats.Length; i++) {
@@ -124,14 +136,19 @@ public class GameplayMenu : MonoBehaviour {
             }
 
             // If the player clicks Close, close the menu.
-            if(windows[4].activeInHierarchy) {
+            if (windows[4].activeInHierarchy) {
                 closeMenu();
             }
         }
+
+        itemChoosingCharMenu.SetActive(false);
     }
 
     // Toggle to open windows in the gameplay menu using mouse.
     public void ToggleWindowsByKeys() {
+        // Update the inventory.
+        ShowItems();
+
         // If the player presses the right key, current select arrow + 1 and goes to the corresponding button based on its code number.
         if (Input.GetKeyDown("right") && currentArrowPos < 5 && WindowsAreClosed()) {
             currentSelectArrows[currentArrowPos].SetActive(false);
@@ -167,9 +184,9 @@ public class GameplayMenu : MonoBehaviour {
         if (Input.GetButtonDown("No Button")) {
             windows[currentArrowPos].SetActive(false);
         }
-        
+
         // If the player chooses Close, close the menu.
-        if(windows[4].activeInHierarchy) {
+        if (windows[4].activeInHierarchy) {
             closeMenu();
         }
     }
@@ -187,7 +204,7 @@ public class GameplayMenu : MonoBehaviour {
 
     // Close the gameplay menu.
     public void closeMenu() {
-        for(int i = 0; i< windows.Length; i++) {
+        for (int i = 0; i < windows.Length; i++) {
             windows[i].SetActive(false);
         }
 
@@ -195,5 +212,71 @@ public class GameplayMenu : MonoBehaviour {
 
         // Let the Game Manager knows that gamepplay menu is closed.
         GameManager.selfReference.gameplayMenuIsOpened = false;
+        itemChoosingCharMenu.SetActive(false);
+    }
+
+    // Show the items in the inventory.
+    public void ShowItems() {
+        // Sort the items in the inventory.
+        GameManager.selfReference.SortItems();
+
+        for (int i = 0; i < itemButtons.Length; i++) {
+            itemButtons[i].buttonValue = i;
+
+            if (GameManager.selfReference.itemsInInventory[i] != "") {
+                itemButtons[i].itemImage.gameObject.SetActive(true);
+                itemButtons[i].itemImage.sprite = GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[i]).itemSprite;
+                itemButtons[i].amountText.text = GameManager.selfReference.itemsAmount[i].ToString();
+            }
+
+            else {
+                itemButtons[i].itemImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    // Select an item.
+    public void SelectItem(Item item) {
+        activeItem = item;
+
+        if (activeItem.isItem) {
+            useButtonText.text = "Use";
+        }
+
+        if (activeItem.isWeapon || activeItem.isRing || activeItem.isNecklace || activeItem.areShoes) {
+            useButtonText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
+    }
+
+    // Drop item's button.
+    public void DropItem() {
+        if (activeItem != null) {
+            GameManager.selfReference.RemoveItem(activeItem.itemName);
+        }
+    }
+
+    // Open the choosing-character-to-use-item-on panel.
+    public void OpenItemChoosingChar() {
+        itemChoosingCharMenu.SetActive(true);
+
+        for (int i = 0; i < itemChoosingCharNames.Length; i++) {
+            itemChoosingCharNames[i].text = PartyManager.selfReference.membersStats[i].characterName;
+            itemChoosingCharNames[i].transform.parent.gameObject.SetActive(PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy);
+        }
+    }
+
+    // Close the choosing-character-to-use-item-on panel.
+    public void CloseItemChoosingChar() {
+        itemChoosingCharMenu.SetActive(false);
+    }
+
+    // Use/equip an item on a character.
+    public void UseItem(int characterCode) {
+        activeItem.Use(characterCode);
+        CloseItemChoosingChar();
     }
 }
