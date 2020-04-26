@@ -32,6 +32,8 @@ public class GameplayMenu : MonoBehaviour {
     public GameObject itemChoosingCharMenu;
     public Text[] itemChoosingCharNames;
 
+    public Text coinsText;
+
     // Start is called before the first frame update
     void Start() {
         selfReference = this;
@@ -234,6 +236,9 @@ public class GameplayMenu : MonoBehaviour {
                 itemButtons[i].amountText.text = "";
             }
         }
+
+        // Update the gold coins amount in the inventory.
+        coinsText.text = GameManager.selfReference.currentCoins.ToString() + " GC";
     }
 
     // Select an item.

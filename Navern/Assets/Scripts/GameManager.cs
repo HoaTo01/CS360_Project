@@ -7,12 +7,15 @@ public class GameManager : MonoBehaviour {
     public static GameManager selfReference;
 
     // Can-move control elements
-    public bool gameplayMenuIsOpened, dialogIsOpened, isInTransition;
+    public bool gameplayMenuIsOpened, dialogIsOpened, isInTransition, shopIsOpened;
 
     // Inventory's elements
+    [Header("Inventory Elements")]
     public string[] itemsInInventory;
     public int[] itemsAmount;
     public Item[] referenceItems;
+
+    public int currentCoins;
 
     // Start is called before the first frame update
     void Start() {
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour {
 
     //Prevent characters from moving in certain situations.
     private void MovingControl() {
-        if (gameplayMenuIsOpened || dialogIsOpened || isInTransition) {
+        if (gameplayMenuIsOpened || dialogIsOpened || isInTransition || shopIsOpened) {
             PlayerControl.selfReference.canMove = false;
         }
 

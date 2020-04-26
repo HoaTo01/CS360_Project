@@ -21,8 +21,25 @@ public class ItemButton : MonoBehaviour {
 
     // Process the logic when press an item button in the inventory.
     public void Press() {
-        if (GameManager.selfReference.itemsInInventory[buttonValue] != "") {
-            GameplayMenu.selfReference.SelectItem(GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[buttonValue]));
+        if (GameplayMenu.selfReference.gameplayMenu.activeInHierarchy) {
+            if (GameManager.selfReference.itemsInInventory[buttonValue] != "") {
+                GameplayMenu.selfReference.SelectItem(GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[buttonValue]));
+            }
+
+            if (GameManager.selfReference.itemsInInventory[buttonValue] == "") {
+                GameplayMenu.selfReference.itemName.text = "";
+                GameplayMenu.selfReference.itemDescription.text = "";
+            }
+        }
+
+        if (Shop.selfReference.shopMenu.activeInHierarchy) {
+            if (Shop.selfReference.buyMenu.activeInHierarchy) {
+                Shop.selfReference.SelectBuyItem(GameManager.selfReference.GetItemDetails(Shop.selfReference.ItemsForSale[buttonValue]));
+            }
+
+            if (Shop.selfReference.sellMenu.activeInHierarchy) {
+                Shop.selfReference.SelectSellItem(GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[buttonValue]));
+            }
         }
     }
 }
