@@ -18,6 +18,10 @@ public class DialogManager : MonoBehaviour {
 
     private bool textIsRunning;
 
+    private string questToFlag;
+    private bool flagQuestCompleted;
+    private bool shouldFlagQuest;
+
     // Start is called before the first frame update
     void Start() {
         if (selfReference == null) {
@@ -40,6 +44,19 @@ public class DialogManager : MonoBehaviour {
 
                     // Let the Game Manager knows that the dialog box is closed.
                     GameManager.selfReference.dialogIsOpened = false;
+
+                    // Flag quest after dialog if shouldFlagQuest = true.
+                    if (shouldFlagQuest) {
+                        shouldFlagQuest = false;
+
+                        if (flagQuestCompleted) {
+                            QuestManager.selfReference.FlagQuestCompleted(questToFlag);
+                        }
+
+                        else {
+                            QuestManager.selfReference.FlagQuestNotCompleted(questToFlag);
+                        }
+                    }
                 }
 
                 else {
@@ -48,14 +65,14 @@ public class DialogManager : MonoBehaviour {
 
                     // If dialogLines[currentLinePos - 1] is a name line, ignore it
                     if (dialogLines[currentLinePos - 1].StartsWith("name-")) {
-                        if(arrowDown.activeInHierarchy) {
+                        if (arrowDown.activeInHierarchy) {
                             StartCoroutine(TypeDialog(dialogLines[currentLinePos], dialogLines[currentLinePos + 1]));
                             currentLinePos++;
                         }
 
                         else {
                             StartCoroutine(TypeDialog("", dialogLines[currentLinePos]));
-                        }                    
+                        }
                     }
 
                     else {
@@ -149,5 +166,13 @@ public class DialogManager : MonoBehaviour {
 
             textIsRunning = false;
         }
+    }
+
+    // Know a quest should be activated.
+    public void ShouldActivateQuest(string quest, bool flagCompleted) {
+        questToFlag = quest;
+        flagQuestCompleted = flagCompleted;
+
+        shouldFlagQuest = true;
     }
 }

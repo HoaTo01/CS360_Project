@@ -31,9 +31,7 @@ public class Shop : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.V) && !shopMenu.activeInHierarchy) {
-            OpenShop();
-        }
+
     }
 
     // Open the shop menu.
@@ -114,13 +112,13 @@ public class Shop : MonoBehaviour {
     public void SelectBuyItem(Item item) {
         selectedItem = item;
 
-        if(selectedItem!= null) {
+        if (selectedItem != null) {
             buyItemName.text = selectedItem.itemName;
             buyItemDescription.text = selectedItem.description;
             buyItemPrice.text = "Price: " + selectedItem.itemValue + " GC";
         }
-        
-        if(selectedItem== null) {
+
+        if (selectedItem == null) {
             buyItemName.text = "Shopkeeper:";
             buyItemDescription.text = "What would you like to buy?";
             buyItemPrice.text = "Price: ";
@@ -131,13 +129,13 @@ public class Shop : MonoBehaviour {
     public void SelectSellItem(Item item) {
         selectedItem = item;
 
-        if(selectedItem!= null) {
+        if (selectedItem != null) {
             sellItemName.text = selectedItem.itemName;
             sellItemDescription.text = selectedItem.description;
             sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.itemValue * sellValueCoefficient).ToString() + " GC";
         }
-        
-        if(selectedItem== null) {
+
+        if (selectedItem == null) {
             sellItemName.text = "Shopkeeper:";
             sellItemDescription.text = "What would you like to sell?";
             sellItemValue.text = "Value: ";

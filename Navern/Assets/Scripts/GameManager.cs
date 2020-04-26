@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     // Elements
@@ -153,5 +154,88 @@ public class GameManager : MonoBehaviour {
         else {
             Debug.LogError("Couldn't find " + item);
         }
+    }
+
+    // Save the game's data.
+    public void SaveData() {
+        // Save the position.
+        PlayerPrefs.SetString("Current_Scene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetFloat("Player_Position_x", PlayerControl.selfReference.transform.position.x);
+        PlayerPrefs.SetFloat("Player_Position_y", PlayerControl.selfReference.transform.position.y);
+        PlayerPrefs.SetFloat("Player_Position_z", PlayerControl.selfReference.transform.position.z);
+
+        // Save character's info.
+        for (int i = 0; i < PartyManager.selfReference.membersStats.Length; i++) {
+            if (PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy) {
+                PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_active", 1);
+            }
+
+            else {
+                PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_active", 0);
+            }
+
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentHP", PartyManager.selfReference.membersStats[i].currentHP);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_MaxHP", PartyManager.selfReference.membersStats[i].maxHP);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentMP", PartyManager.selfReference.membersStats[i].currentMP);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_MaxMP", PartyManager.selfReference.membersStats[i].maxMP);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentEXP", PartyManager.selfReference.membersStats[i].currentEXP);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CharacterLevel", PartyManager.selfReference.membersStats[i].characterLevel);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Agility", PartyManager.selfReference.membersStats[i].agility);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceLevel", PartyManager.selfReference.membersStats[i].diceLevel);
+            PlayerPrefs.SetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceFaces", PartyManager.selfReference.membersStats[i].numberOfDiceFaces);
+            PlayerPrefs.SetFloat("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceCoefficient", (float)PartyManager.selfReference.membersStats[i].diceCoefficient);
+            PlayerPrefs.SetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Weapon", PartyManager.selfReference.membersStats[i].weaponEquipment);
+            PlayerPrefs.SetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Ring", PartyManager.selfReference.membersStats[i].ringEquipment);
+            PlayerPrefs.SetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Necklace", PartyManager.selfReference.membersStats[i].necklaceEquipment);
+            PlayerPrefs.SetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Shoes", PartyManager.selfReference.membersStats[i].shoesEquipment);
+        }
+
+        // Save inventory's data.
+        for (int i = 0; i < itemsInInventory.Length; i++) {
+            PlayerPrefs.SetString("ItemInInventory_" + i, itemsInInventory[i]);
+            PlayerPrefs.SetInt("ItemAmount_" + i, itemsAmount[i]);
+        }
+
+        PlayerPrefs.SetInt("GoldCoins", currentCoins);
+    }
+
+    // Load the game's data.
+    public void LoadData() {
+        // Load the character's position.
+        PlayerControl.selfReference.transform.position = new Vector3(PlayerPrefs.GetFloat("Player_Position_x"), PlayerPrefs.GetFloat("Player_Position_y"), PlayerPrefs.GetFloat("Player_Position_z"));
+
+        // Load the character's info.
+        for (int i = 0; i < PartyManager.selfReference.membersStats.Length; i++) {
+            if (PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_active") == 1) {
+                PartyManager.selfReference.membersStats[i].gameObject.SetActive(true);
+            }
+
+            else {
+                PartyManager.selfReference.membersStats[i].gameObject.SetActive(false);
+            }
+
+            PartyManager.selfReference.membersStats[i].currentHP = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentHP");
+            PartyManager.selfReference.membersStats[i].maxHP = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_MaxHP");
+            PartyManager.selfReference.membersStats[i].currentMP = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentMP");
+            PartyManager.selfReference.membersStats[i].maxMP = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_MaxMP");
+            PartyManager.selfReference.membersStats[i].currentEXP = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CurrentEXP");
+            PartyManager.selfReference.membersStats[i].characterLevel = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_CharacterLevel");
+            PartyManager.selfReference.membersStats[i].agility = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Agility");
+            PartyManager.selfReference.membersStats[i].diceLevel = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceLevel");
+            PartyManager.selfReference.membersStats[i].numberOfDiceFaces = PlayerPrefs.GetInt("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceFaces");
+            PartyManager.selfReference.membersStats[i].diceCoefficient = PlayerPrefs.GetFloat("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_DiceCoefficient");
+            PartyManager.selfReference.membersStats[i].weaponEquipment = PlayerPrefs.GetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Weapon");
+            PartyManager.selfReference.membersStats[i].ringEquipment = PlayerPrefs.GetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Ring");
+            PartyManager.selfReference.membersStats[i].necklaceEquipment = PlayerPrefs.GetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Necklace");
+            PartyManager.selfReference.membersStats[i].shoesEquipment = PlayerPrefs.GetString("Player_" + PartyManager.selfReference.membersStats[i].characterName + "_Shoes");
+        }
+
+        // Load inventory's data
+        for (int i = 0; i < itemsInInventory.Length; i++) {
+            itemsInInventory[i] = PlayerPrefs.GetString("ItemInInventory_" + i);
+            itemsAmount[i] = PlayerPrefs.GetInt("ItemAmount_" + i);
+        }
+
+        currentCoins = PlayerPrefs.GetInt("GoldCoins");
     }
 }

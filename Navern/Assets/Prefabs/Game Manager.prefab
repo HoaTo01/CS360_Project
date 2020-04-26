@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7430872728570568380}
   - component: {fileID: 555694959179573842}
+  - component: {fileID: 1667756166}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   gameplayMenuIsOpened: 0
   dialogIsOpened: 0
   isInTransition: 0
+  shopIsOpened: 0
   itemsInInventory:
   - 
   - 
@@ -94,3 +96,21 @@ MonoBehaviour:
   - {fileID: 6539730668160064910, guid: 88e7eb4bea80c4345975017ad940c810, type: 3}
   - {fileID: 5858917796863381849, guid: 84b757044604fec4981de312ee2b04a8, type: 3}
   currentCoins: 100
+--- !u!114 &1667756166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686918059426672851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00578ee072b64544eafd5270a0970bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questFlagNames:
+  - 
+  - Defeat the Dragon (Dream)
+  - Talk to The Girl (Dream)
+  - Quest Test
+  questFlagComplete: 
