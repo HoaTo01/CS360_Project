@@ -23,6 +23,9 @@ public class DialogActivator : MonoBehaviour {
         if (canActivate && Input.GetButtonDown("Yes Button") && !DialogManager.selfReference.dialogBox.activeInHierarchy) {
             DialogManager.selfReference.ShowDialog(dialogLines, isPerson);
             DialogManager.selfReference.ShouldActivateQuest(questToFlag, flagCompleted);
+
+            // Play the SFX.
+            AudioManager.selfReference.PlaySFX(4);
         }
     }
 

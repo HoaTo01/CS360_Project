@@ -49,3 +49,5 @@ MonoBehaviour:
     type: 3}
   gameManager: {fileID: 686918059426672851, guid: 33f8d622b793186478929aa409894fc3,
     type: 3}
+  audioManager: {fileID: 8542941118008096577, guid: a45ec4a4ff1b0cd468263d97692f512d,
+    type: 3}

@@ -85,6 +85,9 @@ public class DialogManager : MonoBehaviour {
                         }
                     }
                 }
+
+                // Play the SFX.
+                AudioManager.selfReference.PlaySFX(4);
             }
         }
     }

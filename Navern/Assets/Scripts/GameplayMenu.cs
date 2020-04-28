@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayMenu : MonoBehaviour {
     // Elements
@@ -63,15 +64,38 @@ public class GameplayMenu : MonoBehaviour {
                 // Let the Game Manager knows that gamepplay menu is opened.
                 GameManager.selfReference.gameplayMenuIsOpened = true;
             }
+
+            // Play the SFX.
+            AudioManager.selfReference.PlaySFX(5);
         }
 
         if (gameplayMenu.activeInHierarchy) {
             if (Input.GetButtonDown("No Button") && WindowsAreClosed()) {
                 closeMenu();
+
+                // Play the SFX.
+                AudioManager.selfReference.PlaySFX(5);
             }
 
             // Control the gameplay menu windows
             ToggleWindowsByKeys();
+        }
+
+        // If the player chooses Close, close the menu.
+        if (windows[4].activeInHierarchy) {
+            closeMenu();
+
+            windows[4].SetActive(false);
+        }
+
+        // If the player chooses Exit Game, exit to the main menu.
+        if(windows[5].activeInHierarchy) {
+            SceneManager.LoadScene("Main Menu");
+
+            Destroy(GameManager.selfReference.gameObject);
+            Destroy(PlayerControl.selfReference.gameObject);
+            Destroy(AudioManager.selfReference.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -130,16 +154,11 @@ public class GameplayMenu : MonoBehaviour {
                 currentArrowPos = windowCode;
                 currentSelectArrows[currentArrowPos].SetActive(true);
 
-                windows[i].SetActive(!windows[i].activeInHierarchy);
+                windows[currentArrowPos].SetActive(true);
             }
 
             else {
                 windows[i].SetActive(false);
-            }
-
-            // If the player clicks Close, close the menu.
-            if (windows[4].activeInHierarchy) {
-                closeMenu();
             }
         }
 
@@ -156,6 +175,9 @@ public class GameplayMenu : MonoBehaviour {
             currentSelectArrows[currentArrowPos].SetActive(false);
             currentArrowPos++;
             currentSelectArrows[currentArrowPos].SetActive(true);
+
+            // Play the SFX.
+            PlaySFXButtons();
         }
 
         // If the player presses the right key, current select arrow - 1 and goes to the corresponding button based on its code number.
@@ -163,6 +185,9 @@ public class GameplayMenu : MonoBehaviour {
             currentSelectArrows[currentArrowPos].SetActive(false);
             currentArrowPos--;
             currentSelectArrows[currentArrowPos].SetActive(true);
+
+            // Play the SFX.
+            PlaySFXButtons();
         }
 
         // If the player presses the down key, current select arrow + 3 and goes to the corresponding button based on its code number.
@@ -170,6 +195,9 @@ public class GameplayMenu : MonoBehaviour {
             currentSelectArrows[currentArrowPos].SetActive(false);
             currentArrowPos += 3;
             currentSelectArrows[currentArrowPos].SetActive(true);
+
+            // Play the SFX.
+            PlaySFXButtons();
         }
 
         // If the player presses the up key, current select arrow - 3 and goes to the corresponding button based on its code number.
@@ -177,19 +205,25 @@ public class GameplayMenu : MonoBehaviour {
             currentSelectArrows[currentArrowPos].SetActive(false);
             currentArrowPos -= 3;
             currentSelectArrows[currentArrowPos].SetActive(true);
+
+            // Play the SFX.
+            PlaySFXButtons();
         }
 
         if (Input.GetButtonDown("Yes Button")) {
             windows[currentArrowPos].SetActive(true);
+
+            // Play the SFX.
+            PlaySFXButtons();
         }
 
         if (Input.GetButtonDown("No Button")) {
-            windows[currentArrowPos].SetActive(false);
-        }
+            for (int i = 0; i < windows.Length; i++) {
+                windows[i].SetActive(false);
+            }
 
-        // If the player chooses Close, close the menu.
-        if (windows[4].activeInHierarchy) {
-            closeMenu();
+            // Play the SFX.
+            PlaySFXButtons();
         }
     }
 
@@ -296,5 +330,10 @@ public class GameplayMenu : MonoBehaviour {
     // Close save window.
     public void closeSaveWindow() {
         windows[2].SetActive(false);
+    }
+
+    // Play the SFX for buttons.
+    public void PlaySFXButtons() {
+        AudioManager.selfReference.PlaySFX(4);
     }
 }

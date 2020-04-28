@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Main Menu.unity
+    guid: 72c89233c951aea4fbad303448ce475a
+  - enabled: 1
+    path: Assets/Scenes/Fountain of Miracles.unity
+    guid: 3df02e0bdbb8cf74aaf4122a5017d9f7
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 8f4a2178681fee0409299f25f1d1efde
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 99ed73bfd1cb8ec4bb24346a36bf8398
   m_configObjects: {}

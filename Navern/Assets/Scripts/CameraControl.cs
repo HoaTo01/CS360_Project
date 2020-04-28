@@ -7,11 +7,16 @@ public class CameraControl : MonoBehaviour {
     // Elements
     public Transform target;
 
+    [Header("Camera Elements")]
     public Tilemap map;
     private Vector3 bottomLeftOfMap;
     private Vector3 topRightOfMap;
     private float halfHeightOfCamera;
     private float halfWidthOfCamera;
+
+    [Header("Music Elements")]
+    public int musicCode;
+    public bool musicPlayed;
 
     // Start is called before the first frame update
     void Start() {
@@ -49,5 +54,11 @@ public class CameraControl : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftOfMap.x, topRightOfMap.x),
                                          Mathf.Clamp(transform.position.y, bottomLeftOfMap.y, topRightOfMap.y),
                                          transform.position.z);
+
+        // Play the music when loading into a new scene.
+        if (!musicPlayed) {
+            musicPlayed = true;
+            AudioManager.selfReference.PlayMusic(musicCode);
+        }
     }
 }

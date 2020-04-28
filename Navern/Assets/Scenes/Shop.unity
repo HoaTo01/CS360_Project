@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &63880848
 BoxCollider2D:
@@ -1961,7 +1961,7 @@ PrefabInstance:
     - target: {fileID: 4972446928921156138, guid: bddc358bc97754f41bc1967bb1d5c52d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4972446928921156138, guid: bddc358bc97754f41bc1967bb1d5c52d,
         type: 3}
@@ -4557,75 +4557,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1417550523
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 686918059426672851, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_Name
-      value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 289.21646
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 225.53706
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1166.0625
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7430872728570568380, guid: 33f8d622b793186478929aa409894fc3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 33f8d622b793186478929aa409894fc3, type: 3}
 --- !u!1 &1674130821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,7 +5189,7 @@ PrefabInstance:
     - target: {fileID: 7755519847561044183, guid: 796f8fdce84412f4f8407c33442e2c39,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7755519847561044183, guid: 796f8fdce84412f4f8407c33442e2c39,
         type: 3}
@@ -5280,6 +5211,11 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 771385071}
+    - target: {fileID: 3478278926738747058, guid: 796f8fdce84412f4f8407c33442e2c39,
+        type: 3}
+      propertyPath: musicCode
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796f8fdce84412f4f8407c33442e2c39, type: 3}
 --- !u!1 &2039801850
