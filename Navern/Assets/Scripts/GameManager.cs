@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager selfReference;
 
     // Can-move control elements
-    public bool gameplayMenuIsOpened, dialogIsOpened, isInTransition, shopIsOpened;
+    public bool gameplayMenuIsOpened, dialogIsOpened, isInTransition, shopIsOpened, battleActive;
 
     // Inventory's elements
     [Header("Inventory Elements")]
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 
     //Prevent characters from moving in certain situations.
     private void MovingControl() {
-        if (gameplayMenuIsOpened || dialogIsOpened || isInTransition || shopIsOpened) {
+        if (gameplayMenuIsOpened || dialogIsOpened || isInTransition || shopIsOpened || battleActive) {
             PlayerControl.selfReference.canMove = false;
         }
 

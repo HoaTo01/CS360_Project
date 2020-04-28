@@ -489,12 +489,12 @@ PrefabInstance:
     - target: {fileID: 2049227530495316987, guid: e4eaef0d4de67724bb6a08e18267aca3,
         type: 3}
       propertyPath: loadArea
-      value: Cave
+      value: Outside Cave
       objectReference: {fileID: 0}
     - target: {fileID: 2049227530495316987, guid: e4eaef0d4de67724bb6a08e18267aca3,
         type: 3}
       propertyPath: transitEntranceName
-      value: Fountain of Miracles-Cave
+      value: Fountain of Miracles-Outside Cave
       objectReference: {fileID: 0}
     - target: {fileID: 656384559, guid: e4eaef0d4de67724bb6a08e18267aca3, type: 3}
       propertyPath: m_LocalPosition.x
