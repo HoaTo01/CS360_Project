@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  magicSkillsAvailable: []
+  skillsAvailable:
+  - Normal Attack
   characterName: Dead Warrior
   currentHP: 4
   maxHP: 4

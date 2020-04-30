@@ -136,7 +136,7 @@ MonoBehaviour:
   ringImage: {fileID: 0}
   necklaceImage: {fileID: 0}
   shoesImage: {fileID: 0}
-  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+  characterSprite: {fileID: 695335084024847823, guid: 7ee158f4c28c61f43942def9c0699faf,
     type: 3}
 --- !u!1 &5076121133446921606
 GameObject:

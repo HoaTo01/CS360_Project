@@ -41,5 +41,9 @@ public class ItemButton : MonoBehaviour {
                 Shop.selfReference.SelectSellItem(GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[buttonValue]));
             }
         }
+
+        if(ItemsInBattle.selfReference.itemsWindow.activeInHierarchy) {
+            ItemsInBattle.selfReference.SelectItem(GameManager.selfReference.GetItemDetails(GameManager.selfReference.itemsInInventory[buttonValue]));
+        }
     }
 }

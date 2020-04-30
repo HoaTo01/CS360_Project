@@ -27,8 +27,6 @@ public class DialogManager : MonoBehaviour {
         if (selfReference == null) {
             selfReference = this;
         }
-
-        dialogText.text = dialogLines[currentLinePos];
     }
 
     // Update is called once per frame

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7099807247465122137}
   - component: {fileID: 7099807247465122142}
   - component: {fileID: 7099807247465122143}
+  - component: {fileID: 1336163282}
   m_Layer: 0
   m_Name: Minka
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7099807247465122140}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.18, y: 0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -94,8 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389fe1b775e09964aa5faf21134a9e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
-  magicSkillsAvailable: []
+  isPlayer: 1
+  skillsAvailable:
+  - Ring of Fire
+  - Crystal Dance
   characterName: Minka
   currentHP: 0
   maxHP: 0
@@ -105,3 +108,22 @@ MonoBehaviour:
   numberOfDiceFaces: 0
   diceCoefficient: 0
   isDead: 0
+--- !u!95 &1336163282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099807247465122140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bb92578be9fc2642b400e3014ce4106, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  magicSkillsAvailable: []
+  skillsAvailable:
+  - Corruption
   characterName: Corrupted Wizard
   currentHP: 7
   maxHP: 7

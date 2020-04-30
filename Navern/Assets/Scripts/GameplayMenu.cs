@@ -300,11 +300,13 @@ public class GameplayMenu : MonoBehaviour {
 
     // Open the choosing-character-to-use-item-on panel.
     public void OpenItemChoosingChar() {
-        itemChoosingCharMenu.SetActive(true);
+        if (activeItem != null) {
+            itemChoosingCharMenu.SetActive(true);
 
-        for (int i = 0; i < itemChoosingCharNames.Length; i++) {
-            itemChoosingCharNames[i].text = PartyManager.selfReference.membersStats[i].characterName;
-            itemChoosingCharNames[i].transform.parent.gameObject.SetActive(PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy);
+            for (int i = 0; i < itemChoosingCharNames.Length; i++) {
+                itemChoosingCharNames[i].text = PartyManager.selfReference.membersStats[i].characterName;
+                itemChoosingCharNames[i].transform.parent.gameObject.SetActive(PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy);
+            }
         }
     }
 

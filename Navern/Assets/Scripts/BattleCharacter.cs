@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattleCharacter : MonoBehaviour {
     // Elements
     public bool isPlayer;
-    public string[] magicSkillsAvailable;
+    public string[] skillsAvailable;
 
     public string characterName;
 
