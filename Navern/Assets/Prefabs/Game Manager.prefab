@@ -48,6 +48,7 @@ MonoBehaviour:
   dialogIsOpened: 0
   isInTransition: 0
   shopIsOpened: 0
+  battleActive: 0
   itemsInInventory:
   - 
   - 
@@ -95,6 +96,8 @@ MonoBehaviour:
   - {fileID: 9038825067339304016, guid: 773f14c7d87f05345ba1740d887f3def, type: 3}
   - {fileID: 6539730668160064910, guid: 88e7eb4bea80c4345975017ad940c810, type: 3}
   - {fileID: 5858917796863381849, guid: 84b757044604fec4981de312ee2b04a8, type: 3}
+  - {fileID: 1134083641869139024, guid: 424cd7a29f52c18478c91b460ade9054, type: 3}
+  - {fileID: 9215888352760788852, guid: ef0d589ffe66b11409ab20fb96cfdbc8, type: 3}
   currentCoins: 100
 --- !u!114 &1667756166
 MonoBehaviour:

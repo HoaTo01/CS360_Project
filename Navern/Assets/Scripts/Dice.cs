@@ -45,6 +45,8 @@ public class Dice : MonoBehaviour {
 
         // Loop to switch dice sides ramdomly
         for (int i = 0; i <= numberOfSwitches; i++) {
+            AudioManager.selfReference.PlaySFX(4);
+
             playerRandomDiceSide = Random.Range(0, playerNumberOfDiceFaces);
             enemyRandomDiceSide = Random.Range(0, enemyNumberOfDiceFaces);
 

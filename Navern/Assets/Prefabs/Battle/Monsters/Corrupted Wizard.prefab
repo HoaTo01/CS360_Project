@@ -103,5 +103,8 @@ MonoBehaviour:
   maxMP: 0
   agility: 5
   numberOfDiceFaces: 6
+  characterLevel: 2
   diceCoefficient: 1
   isDead: 0
+  fadeSpeed: 1
+  sprite: {fileID: 3928593522717166130}

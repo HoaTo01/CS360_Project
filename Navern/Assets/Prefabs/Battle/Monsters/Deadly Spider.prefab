@@ -97,11 +97,14 @@ MonoBehaviour:
   skillsAvailable:
   - Normal Attack
   characterName: Deadly Spider
-  currentHP: 5
+  currentHP: 8
   maxHP: 5
   currentMP: 0
   maxMP: 0
   agility: 8
   numberOfDiceFaces: 6
+  characterLevel: 2
   diceCoefficient: 1
   isDead: 0
+  fadeSpeed: 1
+  sprite: {fileID: 4227113582351585074}

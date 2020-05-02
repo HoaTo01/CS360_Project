@@ -22,5 +22,7 @@ public class BattleTargetButton : MonoBehaviour {
     // Press a choosing target button.
     public void Press() {
         BattleManager.selfReference.PlayerAttack(skillName, target);
+
+        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].currentMP -= BattleManager.selfReference.manaCost;
     }
 }

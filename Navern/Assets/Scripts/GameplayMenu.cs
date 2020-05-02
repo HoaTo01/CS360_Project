@@ -89,7 +89,7 @@ public class GameplayMenu : MonoBehaviour {
         }
 
         // If the player chooses Exit Game, exit to the main menu.
-        if(windows[5].activeInHierarchy) {
+        if (windows[5].activeInHierarchy) {
             SceneManager.LoadScene("Main Menu");
 
             Destroy(GameManager.selfReference.gameObject);
@@ -295,6 +295,7 @@ public class GameplayMenu : MonoBehaviour {
     public void DropItem() {
         if (activeItem != null) {
             GameManager.selfReference.RemoveItem(activeItem.itemName);
+            itemButtons[0].Press();
         }
     }
 

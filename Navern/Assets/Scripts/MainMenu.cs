@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
     // Elements
     public string newGameScene;
+    public string loadGameScene;
 
     public GameObject loadGameButton;
 
@@ -32,14 +33,16 @@ public class MainMenu : MonoBehaviour {
 
     // Load the saved game.
     public void LoadGame() {
-        SceneManager.LoadScene(PlayerPrefs.GetString("Current_Scene"));
-
-        GameManager.selfReference.LoadData();
-        QuestManager.selfReference.LoadQuestData();
+        SceneManager.LoadScene(loadGameScene);
     }
 
     // Exit game.
     public void ExitGame() {
         Application.Quit();
+    }
+
+    // Play the SFX for buttons.
+    public void PlaySFXButtons() {
+        AudioManager.selfReference.PlaySFX(4);
     }
 }

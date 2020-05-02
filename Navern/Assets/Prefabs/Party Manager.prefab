@@ -56,7 +56,7 @@ MonoBehaviour:
   maxDiceLevel: 10
   numberOfDiceFaces: 6
   diceCoefficient: 1
-  currentHP: 15
+  currentHP: 30
   currentMP: 17
   currentEXP: 0
   weaponEquipment: 

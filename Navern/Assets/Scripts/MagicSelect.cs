@@ -22,17 +22,11 @@ public class MagicSelect : MonoBehaviour {
 
     // Press a magic button.
     public void Press() {
-        if (BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].currentMP >= skillCost) {
-            BattleManager.selfReference.magicWindow.SetActive(false);
-            BattleManager.selfReference.OpenTargetWindow(skillName);
-            BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].currentMP -= skillCost;
-        }
+        BattleManager.selfReference.OpenMagicInfoWindow(skillName);
+    }
 
-        else {
-            // Not enough MP.
-            BattleManager.selfReference.battleNotifications.notificationsText.text = BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].characterName + " does not have enough MP.";
-            BattleManager.selfReference.battleNotifications.Activate();
-            BattleManager.selfReference.magicWindow.SetActive(false);
-        }
+    // Pres the use button in the magic info window.
+    public void UseMagicPress() {
+        BattleManager.selfReference.UseMagic(skillName);
     }
 }

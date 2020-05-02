@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour {
     // Elements
@@ -10,7 +11,9 @@ public class BattleManager : MonoBehaviour {
 
     private bool battleActive;
     private bool playerIsAttacking;
+    private bool running;
 
+    [Header("Battle elements")]
     public GameObject battleScene;
 
     public Transform[] charactersPositions;
@@ -19,26 +22,47 @@ public class BattleManager : MonoBehaviour {
     public BattleCharacter[] mainCharactersPrefabs;
     public BattleCharacter[] monstersPrefabs;
 
-    public List<BattleCharacter> activeBattleCharacters = new List<BattleCharacter>();
-
     public int currentTurn;
     public bool waitingTurnEnd;
 
-    public GameObject optionsButtonsHolder;
-
-    public BattleSkills[] skillsList;
-
     public GameObject enemyAttackEffect;
 
+    public List<BattleCharacter> activeBattleCharacters = new List<BattleCharacter>();
+
+    public GameObject optionsButtonsHolder;
+    public GameObject statsWindow;
+
+    public string gameOverScene;
+
+    [Header("Skill List")]
+    public BattleSkills[] skillsList;
+
+    [Header("Stats Window")]
     public Text[] charactersNames, charactersHP, charactersMP;
 
+    [Header("Target Window Elements")]
     public GameObject targetWindow;
     public BattleTargetButton[] targetButtons;
 
+    [Header("Magic WIndow Elements")]
     public GameObject magicWindow;
     public MagicSelect[] magicButtons;
 
+    public GameObject magicInfoWindow;
+    public Text magicNameText;
+    public Text magicPowerText;
+    public Text magicMPCostText;
+    public Text magicInfoText;
+    public MagicSelect useMagicButton;
+
+    public int manaCost;
+
+    [Header("Battle Notifications")]
     public BattleNotifications battleNotifications;
+
+    [Header("Battle Rewards Elements")]
+    public int[] expGained;
+    public string[] rewardItems;
 
     // Start is called before the first frame update
     void Start() {
@@ -49,11 +73,6 @@ public class BattleManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        // Testing
-        if (Input.GetKeyDown(KeyCode.C)) {
-            StartBattle(new string[] { "Corrupted Wizard", "Dead Warrior" });
-        }
-
         // Turn processing.
         if (battleActive) {
             if (waitingTurnEnd) {
@@ -74,9 +93,26 @@ public class BattleManager : MonoBehaviour {
             }
         }
 
-        // Close all the windows if press "No Button'
+        // Close all the windows if press "No Button"
         if (Input.GetButtonDown("No Button")) {
-            CloseAllWindows();
+            if (magicInfoWindow.activeInHierarchy) {
+                CloseMagicInfoWindow();
+            }
+
+            else {
+                CloseAllWindows();
+            }
+        }
+
+        // Indicate the current battle character.
+        if (battleActive) {
+            for (int i = 0; i < charactersNames.Length; i++) {
+                if (PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy) {
+                    if (activeBattleCharacters[currentTurn].characterName == charactersNames[i].text) {
+                        charactersNames[i].color = Color.green;
+                    }
+                }
+            }
         }
     }
 
@@ -85,6 +121,7 @@ public class BattleManager : MonoBehaviour {
         if (!battleActive) {
             battleActive = true;
             GameManager.selfReference.battleActive = true;
+            statsWindow.SetActive(true);
 
             // Set the camera to the battle scene.
             transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, transform.position.z);
@@ -112,6 +149,7 @@ public class BattleManager : MonoBehaviour {
                             activeBattleCharacters[i].agility = characterStats.agility;
                             activeBattleCharacters[i].diceCoefficient = characterStats.diceCoefficient;
                             activeBattleCharacters[i].numberOfDiceFaces = characterStats.numberOfDiceFaces;
+                            activeBattleCharacters[i].characterLevel = characterStats.characterLevel;
                         }
                     }
                 }
@@ -151,6 +189,13 @@ public class BattleManager : MonoBehaviour {
 
         waitingTurnEnd = true;
 
+        // Reset all the color indicator of characters.
+        for (int i = 0; i < charactersNames.Length; i++) {
+            if (PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy) {
+                charactersNames[i].color = Color.white;
+            }
+        }
+
         // Update the battle info.
         UpdateBattle();
 
@@ -174,11 +219,22 @@ public class BattleManager : MonoBehaviour {
 
             if (activeBattleCharacters[i].currentHP == 0) {
                 // Handle the dead characters.
+                if (activeBattleCharacters[i].isPlayer || activeBattleCharacters[i].isABoss) {
+                    activeBattleCharacters[i].GetComponent<Animator>().SetTrigger("Dead");
+                }
+
+                else {
+                    activeBattleCharacters[i].FadeEnemy();
+                }
             }
 
             else {
                 if (activeBattleCharacters[i].isPlayer) {
                     allCharactersAreDead = false;
+
+                    if (activeBattleCharacters[i].isPlayer || activeBattleCharacters[i].isABoss) {
+                        activeBattleCharacters[i].GetComponent<Animator>().SetTrigger("Still");
+                    }
                 }
 
                 else {
@@ -190,15 +246,13 @@ public class BattleManager : MonoBehaviour {
         if (allCharactersAreDead || allEnemiesAreDead) {
             if (allCharactersAreDead) {
                 // End the battle with the player's loss
+                StartCoroutine(GameOverCo());
             }
 
             else {
                 // End the battle with the playeer's victory.
+                StartCoroutine(EndBattleCo());
             }
-
-            battleScene.SetActive(false);
-            battleActive = false;
-            GameManager.selfReference.battleActive = false;
         }
 
         else {
@@ -253,7 +307,13 @@ public class BattleManager : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         // Play the enemy's attack effect.
-        Instantiate(enemyAttackEffect, activeBattleCharacters[currentTurn].transform.position, activeBattleCharacters[currentTurn].transform.rotation);
+        if (activeBattleCharacters[currentTurn].isABoss) {
+            activeBattleCharacters[currentTurn].GetComponent<Animator>().SetTrigger("Attack");
+        }
+
+        else {
+            Instantiate(enemyAttackEffect, activeBattleCharacters[currentTurn].transform.position, activeBattleCharacters[currentTurn].transform.rotation);
+        }
 
         //Play the skill's animation.
         Instantiate(skillUsed.visualEffect, activeBattleCharacters[target].transform.position, activeBattleCharacters[target].transform.rotation);
@@ -275,7 +335,16 @@ public class BattleManager : MonoBehaviour {
         // Get the target's dice coefficient.
         double targetDiceCoefficient = activeBattleCharacters[target].diceCoefficient;
 
-        double damageCalculation = skillDamagePower * userDiceValue * userDiceCoefficient - targetDiceValue * targetDiceCoefficient;
+        double damageCalculation = 0;
+
+        if (isAHealMove) {
+            damageCalculation = skillDamagePower * userDiceValue * userDiceCoefficient - targetDiceValue;
+        }
+
+        else {
+            damageCalculation = skillDamagePower * userDiceValue * userDiceCoefficient - targetDiceValue * targetDiceCoefficient;
+        }
+
         int damageInflicted = Mathf.FloorToInt((float)damageCalculation);
 
         if (damageInflicted <= 0 && isAHealMove == false) {
@@ -363,21 +432,41 @@ public class BattleManager : MonoBehaviour {
     public void OpenTargetWindow(string skillName) {
         targetWindow.SetActive(true);
 
-        List<int> enemies = new List<int>();
+        // A list of targets.
+        List<int> targets = new List<int>();
 
-        for (int i = 0; i < activeBattleCharacters.Count; i++) {
-            if (!activeBattleCharacters[i].isPlayer) {
-                enemies.Add(i);
+        // Get the info of the skill.
+        BattleSkills skillUsed = null;
+
+        for (int i = 0; i < skillsList.Length; i++) {
+            if (skillsList[i].skillName == skillName) {
+                skillUsed = skillsList[i];
             }
         }
 
+        // If it is a heal move, the targets are members of the team.
+        for (int i = 0; i < activeBattleCharacters.Count; i++) {
+            if (!skillUsed.isAHealMove) {
+                if (!activeBattleCharacters[i].isPlayer) {
+                    targets.Add(i);
+                }
+            }
+
+            else {
+                if (activeBattleCharacters[i].isPlayer) {
+                    targets.Add(i);
+                }
+            }
+        }
+
+        // Update the target buttons.
         for (int i = 0; i < targetButtons.Length; i++) {
-            if (enemies.Count > i) {
+            if (targets.Count > i && activeBattleCharacters[targets[i]].currentHP > 0) {
                 targetButtons[i].gameObject.SetActive(true);
 
                 targetButtons[i].skillName = skillName;
-                targetButtons[i].target = enemies[i];
-                targetButtons[i].targetName.text = activeBattleCharacters[enemies[i]].characterName;
+                targetButtons[i].target = targets[i];
+                targetButtons[i].targetName.text = activeBattleCharacters[targets[i]].characterName;
             }
 
             else {
@@ -413,14 +502,127 @@ public class BattleManager : MonoBehaviour {
 
     // Run from a battle.
     public void Run() {
-        battleActive = false;
-        battleScene.SetActive(false);
+        running = true;
+        StartCoroutine(EndBattleCo());
     }
 
     // Close all battle windows.
     public void CloseAllWindows() {
         targetWindow.SetActive(false);
         magicWindow.SetActive(false);
-        ItemsInBattle.selfReference.itemsWindow.SetActive(false);
+        ItemsInBattle.selfReference.closeItemsWindow();
+        magicInfoWindow.SetActive(false);
+        battleNotifications.gameObject.SetActive(false);
+    }
+
+    // Open the magic info window.
+    public void OpenMagicInfoWindow(string skillName) {
+        magicInfoWindow.SetActive(true);
+
+        useMagicButton.skillName = skillName;
+
+        // Get the info of the skill.
+        BattleSkills skillUsed = null;
+
+        for (int i = 0; i < skillsList.Length; i++) {
+            if (skillsList[i].skillName == skillName) {
+                skillUsed = skillsList[i];
+            }
+        }
+
+        magicNameText.text = skillUsed.skillName;
+        magicPowerText.text = "Power: " + (skillUsed.damagePower * 100).ToString() + "%";
+        magicMPCostText.text = "MP: " + skillUsed.manaCost.ToString();
+        magicInfoText.text = skillUsed.skillInfo;
+    }
+
+    // Close the magic info window.
+    public void CloseMagicInfoWindow() {
+        magicInfoWindow.SetActive(false);
+    }
+
+    public void UseMagic(string skillName) {
+        // Get the info of the skill.
+        BattleSkills skillUsed = null;
+
+        for (int i = 0; i < skillsList.Length; i++) {
+            if (skillsList[i].skillName == skillName) {
+                skillUsed = skillsList[i];
+            }
+        }
+
+        if (activeBattleCharacters[currentTurn].currentMP >= skillUsed.manaCost) {
+            // Close the magic info and magic window.
+            CloseAllWindows();
+            OpenTargetWindow(skillName);
+            manaCost = skillUsed.manaCost;
+        }
+
+        else {
+            // Not enough MP.
+            battleNotifications.notificationsText.text = activeBattleCharacters[currentTurn].characterName + " does not have enough MP.";
+            battleNotifications.Activate();
+            magicInfoWindow.SetActive(false);
+        }
+    }
+
+    // End the battle (coroutine function).
+    public IEnumerator EndBattleCo() {
+        battleActive = false;
+        optionsButtonsHolder.SetActive(false);
+        statsWindow.SetActive(false);
+        CloseAllWindows();
+
+        yield return new WaitForSeconds(0.5f);
+
+        FadeTransition.selfReference.fadeToBlack();
+
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < activeBattleCharacters.Count; i++) {
+            if (activeBattleCharacters[i].isPlayer) {
+                // Set the HP and MP after a battle to equal the HP and MP in battle
+                for (int j = 0; j < PartyManager.selfReference.membersStats.Length; j++) {
+                    if (activeBattleCharacters[i].characterName == PartyManager.selfReference.membersStats[j].characterName) {
+                        PartyManager.selfReference.membersStats[j].currentHP = activeBattleCharacters[i].currentHP;
+                        PartyManager.selfReference.membersStats[j].currentMP = activeBattleCharacters[i].currentMP;
+                    }
+                }
+            }
+
+            Destroy(activeBattleCharacters[i].gameObject);
+        }
+
+        FadeTransition.selfReference.fadeFromBlack();
+        battleScene.SetActive(false);
+        activeBattleCharacters.Clear();
+        currentTurn = 0;
+
+        //GameManager.selfReference.battleActive = false;
+        if (running) {
+            GameManager.selfReference.battleActive = false;
+            running = false;
+        }
+
+        else {
+            BattleReward.selfReference.OpenRewardTextBox(expGained, rewardItems);
+        }
+
+        AudioManager.selfReference.PlayMusic(FindObjectOfType<CameraControl>().musicCode);
+    }
+
+    // End the battle with game over.
+    public IEnumerator GameOverCo() {
+        battleActive = false;
+        FadeTransition.selfReference.fadeToBlack();
+        yield return new WaitForSeconds(1f);
+        battleScene.SetActive(false);
+
+        SceneManager.LoadScene(gameOverScene);
+    }
+
+    // Play the SFX for buttons.
+    public void PlaySFXButtons() {
+        AudioManager.selfReference.PlaySFX(4);
     }
 }

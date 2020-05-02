@@ -10,6 +10,8 @@ public class BattleSkills {
     public double damagePower;
     public int manaCost;
 
+    public string skillInfo;
+
     public bool isAHealMove;
 
     public AttackEffect visualEffect;

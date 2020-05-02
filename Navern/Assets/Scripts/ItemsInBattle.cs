@@ -58,6 +58,7 @@ public class ItemsInBattle : MonoBehaviour {
     // Close the items window.
     public void closeItemsWindow() {
         itemsWindow.SetActive(false);
+        CloseItemChoosingChar();
     }
 
     // Select an item.
@@ -102,6 +103,8 @@ public class ItemsInBattle : MonoBehaviour {
     // Use an item on a character.
     public void UseItem(int characterCode) {
         selectedItem.Use(characterCode);
+        GameManager.selfReference.RemoveItem(selectedItem.itemName);
+
         CloseItemChoosingChar();
         closeItemsWindow();
 

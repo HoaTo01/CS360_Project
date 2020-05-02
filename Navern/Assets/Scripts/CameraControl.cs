@@ -44,11 +44,13 @@ public class CameraControl : MonoBehaviour {
     // LateUpdate is called once per frame after Update is called
     void LateUpdate() {
         // Make the camera follow the target
-        if (target == null) {
+        if (target == null && PlayerControl.selfReference != null) {
             target = PlayerControl.selfReference.transform;
         }
 
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        if (target != null) {
+            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        }
 
         // Keep the camera always in the map
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftOfMap.x, topRightOfMap.x),

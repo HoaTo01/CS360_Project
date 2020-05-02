@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: b6ec6d5c85585d048bb4f9a059552bdf
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 5a0f691d689381046a2d184724e4455f
+  - enabled: 1
+    path: Assets/Scenes/Load Scene.unity
+    guid: 028bf3bee080e494cb53f82812638060
   m_configObjects: {}
