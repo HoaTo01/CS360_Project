@@ -98,7 +98,7 @@ MonoBehaviour:
   - {fileID: 5858917796863381849, guid: 84b757044604fec4981de312ee2b04a8, type: 3}
   - {fileID: 1134083641869139024, guid: 424cd7a29f52c18478c91b460ade9054, type: 3}
   - {fileID: 9215888352760788852, guid: ef0d589ffe66b11409ab20fb96cfdbc8, type: 3}
-  currentCoins: 100
+  currentCoins: 20
 --- !u!114 &1667756166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questFlagNames:
   - 
-  - Defeat the Dragon (Dream)
+  - Defeat the Demon (Dream)
   - Talk to The Girl (Dream)
   - Quest Test
   questFlagComplete: 

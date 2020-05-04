@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 1920612593}
   - component: {fileID: 1920612594}
   m_Layer: 0
-  m_Name: Minka
+  m_Name: Fairy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4532,18 +4532,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006062269, y: 0.048377514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8518519, y: 1.7777778}
+    oldSize: {x: 1.36, y: 1.17}
     newSize: {x: 0.8518519, y: 1.7777778}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8518519, y: 1.7777778}
+  m_Size: {x: 1.3974485, y: 1.2940083}
   m_EdgeRadius: 0
 --- !u!212 &1920612591
 SpriteRenderer:
@@ -4583,7 +4583,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 4781818895470748026, guid: 7ee158f4c28c61f43942def9c0699faf,
+  m_Sprite: {fileID: 4153013577369414377, guid: 629a92bf89ae4ea4c99a10b68c915afd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4622,18 +4622,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0103189945, y: 0}
+  m_Offset: {x: -0.0020691156, y: 0.032999277}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8518519, y: 1.7777778}
+    oldSize: {x: 1.36, y: 1.17}
     newSize: {x: 0.8518519, y: 1.7777778}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8724899, y: 1.7777778}
+  m_Size: {x: 1.3839777, y: 1.2497897}
   m_EdgeRadius: 0
 --- !u!114 &1920612594
 MonoBehaviour:
@@ -4650,13 +4650,13 @@ MonoBehaviour:
   dialogLines:
   - name-Navern
   - '*Sigh* Not you again...'
-  - name-Mysterious Girl
+  - name-Fairy
   - The Demon...
   - name-Navern
   - Yeah yeah... I'll slay it for you. Jeez...
   - 
   - For God's sake, I have been having this dream like 6 times this week.
   isPerson: 1
-  shouldActivateQuest: 1
-  questToFlag: Quest Test
-  flagCompleted: 1
+  shouldActivateQuest: 0
+  questToFlag: 
+  flagCompleted: 0

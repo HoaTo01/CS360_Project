@@ -96,8 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
+  isABoss: 0
   skillsAvailable:
-  - Ring of Fire
+  - Firering
   - Crystal Dance
   characterName: Minka
   currentHP: 0
@@ -106,8 +107,11 @@ MonoBehaviour:
   maxMP: 0
   agility: 0
   numberOfDiceFaces: 0
+  characterLevel: 0
   diceCoefficient: 0
   isDead: 0
+  fadeSpeed: 1
+  sprite: {fileID: 0}
 --- !u!95 &1336163282
 Animator:
   serializedVersion: 3

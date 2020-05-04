@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  isABoss: 0
   skillsAvailable:
   - Normal Attack
   characterName: Deadly Spider
@@ -101,7 +102,7 @@ MonoBehaviour:
   maxHP: 5
   currentMP: 0
   maxMP: 0
-  agility: 8
+  agility: 10
   numberOfDiceFaces: 6
   characterLevel: 2
   diceCoefficient: 1

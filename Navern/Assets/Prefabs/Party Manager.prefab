@@ -121,7 +121,7 @@ MonoBehaviour:
   maxHP: 24
   maxMP: 51
   agility: 17
-  diceLevel: 3
+  diceLevel: 4
   maxDiceLevel: 10
   numberOfDiceFaces: 8
   diceCoefficient: 2
@@ -206,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5076121133535595085
 Transform:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   diceLevel: 2
   maxDiceLevel: 10
   numberOfDiceFaces: 7
-  diceCoefficient: 1.5
+  diceCoefficient: 1.25
   currentHP: 24
   currentMP: 12
   currentEXP: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   ringImage: {fileID: 0}
   necklaceImage: {fileID: 0}
   shoesImage: {fileID: 0}
-  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+  characterSprite: {fileID: -4735823427133163807, guid: 6207b39ebddef3a43837e84a39158162,
     type: 3}
 --- !u!1 &5076121134061882278
 GameObject:
@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5076121134061882277
 Transform:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   element: Water
   maxHP: 22
   maxMP: 25
-  agility: 16
+  agility: 9
   diceLevel: 1
   maxDiceLevel: 10
   numberOfDiceFaces: 6
@@ -326,5 +326,5 @@ MonoBehaviour:
   ringImage: {fileID: 0}
   necklaceImage: {fileID: 0}
   shoesImage: {fileID: 0}
-  characterSprite: {fileID: -531104753136347904, guid: 670f526ddcd234740b2de13ee85973ad,
+  characterSprite: {fileID: -7535602544190747254, guid: 50a18a293154e564786e6d41070ab956,
     type: 3}

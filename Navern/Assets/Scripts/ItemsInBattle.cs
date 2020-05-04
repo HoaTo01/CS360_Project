@@ -30,7 +30,6 @@ public class ItemsInBattle : MonoBehaviour {
     // Open Items Window in battle.
     public void OpenItemsWindow() {
         itemsWindow.SetActive(true);
-        itemButtons[0].Press();
 
         ShowItems();
     }
@@ -103,7 +102,6 @@ public class ItemsInBattle : MonoBehaviour {
     // Use an item on a character.
     public void UseItem(int characterCode) {
         selectedItem.Use(characterCode);
-        GameManager.selfReference.RemoveItem(selectedItem.itemName);
 
         CloseItemChoosingChar();
         closeItemsWindow();

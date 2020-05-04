@@ -34,6 +34,8 @@ public class DialogManager : MonoBehaviour {
         // Move to another line of the dialog
         if (dialogBox.activeInHierarchy) {
             if (Input.GetButtonDown("Yes Button") && textIsRunning == false) {
+                // Play the SFX.
+                AudioManager.selfReference.PlaySFX(4);
 
                 currentLinePos++;
 

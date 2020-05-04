@@ -22,6 +22,11 @@ public class BattleStarter : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
+    }
+
+    // LateUpdate is called once per frame after Update is called.
+    private void LateUpdate() {
         if (inArea && PlayerControl.selfReference.canMove && !activateOnTalk) {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
                 timeBetweenBattlesCounter -= Time.deltaTime;

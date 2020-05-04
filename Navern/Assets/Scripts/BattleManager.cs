@@ -155,9 +155,6 @@ public class BattleManager : MonoBehaviour {
                 }
             }
 
-            // Sort the battle characters in a way that the one with better agility goes first.
-            activeBattleCharacters = activeBattleCharacters.OrderByDescending(o => o.agility).ToList();
-
             // Load the enemies.
             for (int i = 0; i < enemies.Length; i++) {
                 if (enemies[i] != "") {
@@ -170,6 +167,9 @@ public class BattleManager : MonoBehaviour {
                     }
                 }
             }
+
+            // Sort the battle characters in a way that the one with better agility goes first.
+            activeBattleCharacters = activeBattleCharacters.OrderByDescending(o => o.agility).ToList();
 
             // Set the current turn to 0 and start waiting for turn to end.
             waitingTurnEnd = true;
@@ -321,7 +321,7 @@ public class BattleManager : MonoBehaviour {
         // Inflict damage/heal a target
         int damageInflicted = inflictDamage(target, skillUsed.damagePower, skillUsed.isAHealMove, Dice.selfReference.enemyValue, Dice.selfReference.playerValue);
         activeBattleCharacters[target].currentHP -= damageInflicted;
-        DamagePopup.Create(activeBattleCharacters[target].transform.position, damageInflicted, false);
+        DamagePopup.Create(activeBattleCharacters[target].transform.position, System.Math.Abs(damageInflicted), false);
 
         // Update stats to the screen.
         UpdateStats();
@@ -356,25 +356,48 @@ public class BattleManager : MonoBehaviour {
 
     // Update the stats of battle characters on the screen.
     public void UpdateStats() {
-        for (int i = 0; i < charactersNames.Length; i++) {
-            if (activeBattleCharacters.Count > i) {
-                if (activeBattleCharacters[i].isPlayer) {
-                    BattleCharacter characterStats = activeBattleCharacters[i];
+        int characterPos = 0;
 
-                    charactersNames[i].gameObject.SetActive(true);
-                    charactersNames[i].text = characterStats.characterName;
-                    charactersHP[i].text = Mathf.Clamp(characterStats.currentHP, 0, int.MaxValue) + "/" + characterStats.maxHP;
-                    charactersMP[i].text = Mathf.Clamp(characterStats.currentMP, 0, int.MaxValue) + "/" + characterStats.maxMP;
-                }
-
-                else {
-                    charactersNames[i].gameObject.SetActive(false);
-                }
+        for (int i = 0; i < PartyManager.selfReference.membersStats.Length; i++) {
+            if (!PartyManager.selfReference.membersStats[i].gameObject.activeInHierarchy) {
+                charactersNames[i].gameObject.SetActive(false);
             }
 
             else {
-                charactersNames[i].gameObject.SetActive(false);
+                charactersNames[i].gameObject.SetActive(true);
             }
+        }
+
+        for (int i = 0; i < activeBattleCharacters.Count; i++) {
+            if (activeBattleCharacters[i].isPlayer) {
+                BattleCharacter characterStats = activeBattleCharacters[i];
+
+                charactersNames[characterPos].gameObject.SetActive(true);
+
+                // Set the name of the characters.
+                charactersNames[characterPos].text = characterStats.characterName;
+
+                // Set the HP of the characters.
+                if (characterStats.currentHP > characterStats.maxHP) {
+                    characterStats.currentHP = characterStats.maxHP;
+                }
+                if (characterStats.currentHP < 0) {
+                    characterStats.currentHP = 0;
+                }
+                charactersHP[characterPos].text = Mathf.Clamp(characterStats.currentHP, 0, int.MaxValue) + "/" + characterStats.maxHP;
+
+                // Set the MP of the characters.
+                if (characterStats.currentMP > characterStats.maxMP) {
+                    characterStats.currentMP = characterStats.maxMP;
+                }
+                if (characterStats.currentMP < 0) {
+                    characterStats.currentMP = 0;
+                }
+                charactersMP[characterPos].text = Mathf.Clamp(characterStats.currentMP, 0, int.MaxValue) + "/" + characterStats.maxMP;
+
+                characterPos++;
+            }
+
         }
     }
 
@@ -404,13 +427,15 @@ public class BattleManager : MonoBehaviour {
         // Play the attack animation of the battle character.
         activeBattleCharacters[currentTurn].GetComponent<Animator>().SetTrigger("Attack");
 
+        yield return new WaitForSeconds(0.5f);
+
         //Play the skill's animation.
         Instantiate(skillUsed.visualEffect, activeBattleCharacters[target].transform.position, activeBattleCharacters[target].transform.rotation);
 
         // Inflict damage/heal a target
         int damageInflicted = inflictDamage(target, skillUsed.damagePower, skillUsed.isAHealMove, Dice.selfReference.playerValue, Dice.selfReference.enemyValue);
         activeBattleCharacters[target].currentHP -= damageInflicted;
-        DamagePopup.Create(activeBattleCharacters[target].transform.position, damageInflicted, false);
+        DamagePopup.Create(activeBattleCharacters[target].transform.position, System.Math.Abs(damageInflicted), false);
 
         // Update stats to the screen.
         UpdateStats();
@@ -531,7 +556,15 @@ public class BattleManager : MonoBehaviour {
         }
 
         magicNameText.text = skillUsed.skillName;
-        magicPowerText.text = "Power: " + (skillUsed.damagePower * 100).ToString() + "%";
+
+        if (skillUsed.isAHealMove) {
+            magicPowerText.text = "Factor: " + (skillUsed.damagePower * (-100)).ToString() + "%";
+        }
+
+        else {
+            magicPowerText.text = "Power: " + (skillUsed.damagePower * 100).ToString() + "%";
+        }
+
         magicMPCostText.text = "MP: " + skillUsed.manaCost.ToString();
         magicInfoText.text = skillUsed.skillInfo;
     }
