@@ -39,6 +39,9 @@ public class Shop : MonoBehaviour {
         shopMenu.SetActive(true);
         GameManager.selfReference.shopIsOpened = true;
 
+        // Play the SFX.
+        AudioManager.selfReference.PlaySFX(5);
+
         // Open the buy menu when shop menu is opened.
         OpenBuyMenu();
 
@@ -49,6 +52,9 @@ public class Shop : MonoBehaviour {
     public void CloseShop() {
         shopMenu.SetActive(false);
         GameManager.selfReference.shopIsOpened = false;
+
+        // Play the SFX.
+        AudioManager.selfReference.PlaySFX(5);
     }
 
     // Open the buy menu and close the sell menu.

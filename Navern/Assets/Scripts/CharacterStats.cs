@@ -48,23 +48,24 @@ public class CharacterStats : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
     }
 
     // Add exp
     public void AddEXP(int expToAdd) {
         currentEXP += expToAdd;
 
-        if (currentEXP > expToNextLevel[characterLevel - 1]) {
+        // Level up and reset the EXP.
+        while (currentEXP > expToNextLevel[characterLevel - 1]) {
             currentEXP -= expToNextLevel[characterLevel - 1];
             // Increase the character's level and stats
             characterLevel++;
 
-            maxHP += Mathf.FloorToInt(maxHP * 0.05f);
+            maxHP += Mathf.CeilToInt(maxHP * 0.05f);
             currentHP = maxHP;
-            maxMP += Mathf.FloorToInt(maxMP * 0.05f);
+            maxMP += Mathf.CeilToInt(maxMP * 0.05f);
             currentMP = maxMP;
-            agility += Mathf.FloorToInt(agility * 0.05f);
+            agility += Mathf.CeilToInt(agility * 0.05f);
             numberOfDiceFaces++;
 
             if (characterLevel % 5 == 0 && diceLevel <= maxDiceLevel) {
@@ -73,6 +74,7 @@ public class CharacterStats : MonoBehaviour {
                 numberOfDiceFaces++;
             }
         }
+
 
         // Check if character is at max level, exp cannot go up
         if (characterLevel == maxCharacterLevel) {

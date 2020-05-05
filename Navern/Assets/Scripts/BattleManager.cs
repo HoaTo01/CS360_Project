@@ -34,6 +34,8 @@ public class BattleManager : MonoBehaviour {
 
     public string gameOverScene;
 
+    public bool cannotRun;
+
     [Header("Skill List")]
     public BattleSkills[] skillsList;
 
@@ -117,8 +119,10 @@ public class BattleManager : MonoBehaviour {
     }
 
     // Start the battle.
-    public void StartBattle(string[] enemies) {
+    public void StartBattle(string[] enemies, bool cannotRun) {
         if (!battleActive) {
+            this.cannotRun = cannotRun;
+
             battleActive = true;
             GameManager.selfReference.battleActive = true;
             statsWindow.SetActive(true);
@@ -338,7 +342,7 @@ public class BattleManager : MonoBehaviour {
         double damageCalculation = 0;
 
         if (isAHealMove) {
-            damageCalculation = skillDamagePower * userDiceValue * userDiceCoefficient - targetDiceValue;
+            damageCalculation = skillDamagePower * userDiceValue * userDiceCoefficient + targetDiceValue * targetDiceCoefficient;
         }
 
         else {
@@ -349,6 +353,10 @@ public class BattleManager : MonoBehaviour {
 
         if (damageInflicted <= 0 && isAHealMove == false) {
             damageInflicted = 1;
+        }
+
+        if (damageInflicted >= 0 && isAHealMove) {
+            damageInflicted = -1;
         }
 
         return damageInflicted;
@@ -418,8 +426,8 @@ public class BattleManager : MonoBehaviour {
         }
 
         // Roll the dice to get the dice values.
-        Dice.selfReference.playerNumberOfDiceFaces = activeBattleCharacters[target].numberOfDiceFaces;
-        Dice.selfReference.enemyNumberOfDiceFaces = activeBattleCharacters[currentTurn].numberOfDiceFaces;
+        Dice.selfReference.playerNumberOfDiceFaces = activeBattleCharacters[currentTurn].numberOfDiceFaces;
+        Dice.selfReference.enemyNumberOfDiceFaces = activeBattleCharacters[target].numberOfDiceFaces;
         yield return StartCoroutine(Dice.selfReference.RollTheDice());
 
         yield return new WaitForSeconds(0.5f);
@@ -527,8 +535,15 @@ public class BattleManager : MonoBehaviour {
 
     // Run from a battle.
     public void Run() {
-        running = true;
-        StartCoroutine(EndBattleCo());
+        if (cannotRun) {
+            battleNotifications.notificationsText.text = "You Cannot Run from This Battle!";
+            battleNotifications.Activate();
+        }
+
+        else {
+            running = true;
+            StartCoroutine(EndBattleCo());
+        }
     }
 
     // Close all battle windows.

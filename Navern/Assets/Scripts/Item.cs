@@ -32,7 +32,18 @@ public class Item : MonoBehaviour {
     public void Use(int characterCode) {
         CharacterStats selectedChar = PartyManager.selfReference.membersStats[characterCode];
 
-        if (isItem) {
+        if (isItem && GameManager.selfReference.battleActive) {
+            int selectedBattleChar = 0;
+            for (int i = 0; i < BattleManager.selfReference.activeBattleCharacters.Count; i++) {
+                if (selectedChar.characterName == BattleManager.selfReference.activeBattleCharacters[i].characterName) {
+                    selectedBattleChar = i;
+                }
+            }
+
+            ApplyEffect(BattleManager.selfReference.activeBattleCharacters[selectedBattleChar]);
+        }
+
+        if (isItem && GameManager.selfReference.battleActive == false) {
             ApplyEffect(selectedChar);
         }
 
@@ -175,6 +186,45 @@ public class Item : MonoBehaviour {
 
         if (item.affectCoefficient) {
             selectedChar.diceCoefficient -= item.amountEffect;
+        }
+    }
+
+    // Apply the effect of an item to a character in battle.
+    public void ApplyEffect(BattleCharacter selectedChar) {
+        if (affectCurrentHP) {
+            selectedChar.currentHP += (int)amountEffect;
+
+            if (selectedChar.currentHP > selectedChar.maxHP) {
+                selectedChar.currentHP = selectedChar.maxHP;
+            }
+        }
+
+        if (affectCurrentMP) {
+            selectedChar.currentMP += (int)amountEffect;
+
+            if (selectedChar.currentMP > selectedChar.maxMP) {
+                selectedChar.currentMP = selectedChar.maxMP;
+            }
+        }
+
+        if (affectMaxHP) {
+            selectedChar.maxHP += (int)amountEffect;
+
+            selectedChar.currentHP += (int)amountEffect;
+        }
+
+        if (affectMaxMP) {
+            selectedChar.maxMP += (int)amountEffect;
+
+            selectedChar.currentMP += (int)amountEffect;
+        }
+
+        if (affectAgility) {
+            selectedChar.agility += (int)amountEffect;
+        }
+
+        if (affectCoefficient) {
+            selectedChar.diceCoefficient += amountEffect;
         }
     }
 }

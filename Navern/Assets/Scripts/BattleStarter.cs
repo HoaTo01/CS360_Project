@@ -15,6 +15,11 @@ public class BattleStarter : MonoBehaviour {
 
     public bool deactivateAfterStart;
 
+    public bool cannotRun;
+
+    public bool shouldCompleteQuest;
+    public string questToComplete;
+
     // Start is called before the first frame update
     void Start() {
         timeBetweenBattlesCounter = Random.Range(timeBetweenBattles * 0.5f, timeBetweenBattles * 1.5f);
@@ -59,7 +64,7 @@ public class BattleStarter : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        BattleManager.selfReference.StartBattle(potentialBattles[selectedBattle].enemies);
+        BattleManager.selfReference.StartBattle(potentialBattles[selectedBattle].enemies, cannotRun);
 
         // Get a random enemy to calculate the true exp gained for each character.
         int randomEnemy = Random.Range(0, potentialBattles[selectedBattle].enemies.Length);
@@ -85,6 +90,9 @@ public class BattleStarter : MonoBehaviour {
         if (deactivateAfterStart) {
             gameObject.SetActive(false);
         }
+
+        BattleReward.selfReference.flagQuestCompleted = shouldCompleteQuest;
+        BattleReward.selfReference.questToFlag = questToComplete;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

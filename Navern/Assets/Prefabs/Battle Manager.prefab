@@ -2275,6 +2275,7 @@ MonoBehaviour:
   - {fileID: 3615276664468715834, guid: aacd16bdeeeb47f4db53ef4e905a667b, type: 3}
   - {fileID: 7006951449300123086, guid: e34fa02081a3f9e469104626ad0095bc, type: 3}
   - {fileID: 4227113582351585076, guid: 441ac7764a9781748bedab71774f1b72, type: 3}
+  - {fileID: 3252347815368138815, guid: 7a8daa9018578c547a98dd26f39c47fd, type: 3}
   currentTurn: 0
   waitingTurnEnd: 0
   enemyAttackEffect: {fileID: 9020321094636388715, guid: f93b640019469b44182bf915f18e86b1,
@@ -2308,8 +2309,8 @@ MonoBehaviour:
     visualEffect: {fileID: 2826788110504481601, guid: 194beef2b1b3ca341ab60415de42278a,
       type: 3}
   - skillName: Holy Healing
-    damagePower: -1.8
-    manaCost: 3
+    damagePower: -2.3
+    manaCost: 4
     skillInfo: Uses holy magic to heal a member in the team.
     isAHealMove: 1
     visualEffect: {fileID: 450714383589234714, guid: 69af6f4ee7dc10c4eba968409a6309f6,
@@ -2336,6 +2337,20 @@ MonoBehaviour:
       to use.
     isAHealMove: 0
     visualEffect: {fileID: 1706771657927925686, guid: 21bf2e8ac5490c94b9d1f14d51231790,
+      type: 3}
+  - skillName: X-Corruption
+    damagePower: 2.5
+    manaCost: 0
+    skillInfo: 
+    isAHealMove: 0
+    visualEffect: {fileID: 450714383589234714, guid: 69af6f4ee7dc10c4eba968409a6309f6,
+      type: 3}
+  - skillName: Hellfire
+    damagePower: 2.8
+    manaCost: 0
+    skillInfo: 
+    isAHealMove: 0
+    visualEffect: {fileID: 666797256153968860, guid: f86b0fef52007bd4d8937aabf8c4b311,
       type: 3}
   charactersNames:
   - {fileID: 7080079240338470592}

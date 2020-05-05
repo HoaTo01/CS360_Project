@@ -101,23 +101,34 @@ public class ItemsInBattle : MonoBehaviour {
 
     // Use an item on a character.
     public void UseItem(int characterCode) {
-        selectedItem.Use(characterCode);
+        CharacterStats selectedChar = PartyManager.selfReference.membersStats[characterCode];
 
-        CloseItemChoosingChar();
-        closeItemsWindow();
+        int selectedBattleChar = 0;
+        for (int i = 0; i < BattleManager.selfReference.activeBattleCharacters.Count; i++) {
+            if (selectedChar.characterName == BattleManager.selfReference.activeBattleCharacters[i].characterName) {
+                selectedBattleChar = i;
+            }
+        }
 
-        ShowItems();
+        // Check if the selected character is dead or not.
+        if (BattleManager.selfReference.activeBattleCharacters[selectedBattleChar].currentHP == 0) {
+            CloseItemChoosingChar();
+            closeItemsWindow();
 
-        // Update the battle stats.
-        CharacterStats characterStats = PartyManager.selfReference.membersStats[characterCode];
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].currentHP = characterStats.currentHP;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].maxHP = characterStats.maxHP;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].currentMP = characterStats.currentMP;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].maxMP = characterStats.maxMP;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].agility = characterStats.agility;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].diceCoefficient = characterStats.diceCoefficient;
-        BattleManager.selfReference.activeBattleCharacters[BattleManager.selfReference.currentTurn].numberOfDiceFaces = characterStats.numberOfDiceFaces;
+            BattleManager.selfReference.battleNotifications.notificationsText.text = BattleManager.selfReference.activeBattleCharacters[selectedBattleChar].characterName + " Already Fainted!";
+            BattleManager.selfReference.battleNotifications.Activate();
+        }
 
-        BattleManager.selfReference.NextTurn();
+        else {
+            selectedItem.Use(characterCode);
+
+            CloseItemChoosingChar();
+            closeItemsWindow();
+
+            ShowItems();
+
+            // Move to next turn.
+            BattleManager.selfReference.NextTurn();
+        }
     }
 }

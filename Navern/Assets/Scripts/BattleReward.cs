@@ -15,6 +15,9 @@ public class BattleReward : MonoBehaviour {
     public string[] rewardItems;
     public int[] expGained;
 
+    public bool flagQuestCompleted;
+    public string questToFlag;
+
     // Start is called before the first frame update
     void Start() {
         selfReference = this;
@@ -74,5 +77,9 @@ public class BattleReward : MonoBehaviour {
 
         rewardTextBox.SetActive(false);
         GameManager.selfReference.battleActive = false;
+
+        if(flagQuestCompleted) {
+            QuestManager.selfReference.FlagQuestCompleted(questToFlag);
+        }
     }
 }

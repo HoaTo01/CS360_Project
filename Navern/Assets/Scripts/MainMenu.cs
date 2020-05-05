@@ -19,6 +19,9 @@ public class MainMenu : MonoBehaviour {
         else {
             loadGameButton.SetActive(false);
         }
+
+        // Play the background music.
+        AudioManager.selfReference.PlayMusic(0);
     }
 
     // Update is called once per frame

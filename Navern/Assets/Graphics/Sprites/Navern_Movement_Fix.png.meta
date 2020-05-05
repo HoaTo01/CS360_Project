@@ -1,0 +1,775 @@
+fileFormatVersion: 2
+guid: 0b37ce181ab57724bbd2cb144370fe65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1378131226664100721
+    second: Navern_Movement_Fix_0
+  - first:
+      213: -3644629838901934998
+    second: Navern_Movement_Fix_1
+  - first:
+      213: -7810870277178518588
+    second: Navern_Movement_Fix_2
+  - first:
+      213: -2981715932429019350
+    second: Navern_Movement_Fix_3
+  - first:
+      213: 4398024456299753911
+    second: Navern_Movement_Fix_4
+  - first:
+      213: 6613896282648350188
+    second: Navern_Movement_Fix_5
+  - first:
+      213: 5079651113284066163
+    second: Navern_Movement_Fix_6
+  - first:
+      213: -1347029299065904624
+    second: Navern_Movement_Fix_7
+  - first:
+      213: -8683546582417814784
+    second: Navern_Movement_Fix_8
+  - first:
+      213: 4307827807737587825
+    second: Navern_Movement_Fix_9
+  - first:
+      213: -4565359189917919096
+    second: Navern_Movement_Fix_10
+  - first:
+      213: 1003893939322413287
+    second: Navern_Movement_Fix_11
+  - first:
+      213: 2516307645687759154
+    second: Navern_Movement_Fix_12
+  - first:
+      213: 7694926325285335556
+    second: Navern_Movement_Fix_13
+  - first:
+      213: 7600034641771445644
+    second: Navern_Movement_Fix_14
+  - first:
+      213: 8818768758262831439
+    second: Navern_Movement_Fix_15
+  - first:
+      213: -8956426219659501525
+    second: Navern_Movement_Fix_16
+  - first:
+      213: -2523604484977463976
+    second: Navern_Movement_Fix_17
+  - first:
+      213: 8989755290768181239
+    second: Navern_Movement_Fix_18
+  - first:
+      213: -4939712277337387841
+    second: Navern_Movement_Fix_19
+  - first:
+      213: 7413664494046825663
+    second: Navern_Movement_Fix_20
+  - first:
+      213: -5370566820259673357
+    second: Navern_Movement_Fix_21
+  - first:
+      213: 5059460720366207482
+    second: Navern_Movement_Fix_22
+  - first:
+      213: 2888539358951426354
+    second: Navern_Movement_Fix_23
+  - first:
+      213: -1509536903061161180
+    second: Navern_Movement_Fix_24
+  - first:
+      213: 3507223333330604362
+    second: Navern_Movement_Fix_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 46
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 937
+        width: 46
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e626664cf381294d9a2e973226904d3
+      internalID: 1378131226664100721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 939
+        width: 46
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8512e14daa8fe4e49a42c3ca40907017
+      internalID: -3644629838901934998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 937
+        width: 46
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b6a3f7d77ea9547ba192469617169b
+      internalID: -7810870277178518588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 938
+        width: 46
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c4f5db506992744bbbb1232be06a1a
+      internalID: -2981715932429019350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_4
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 820
+        width: 46
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f54da2229db7f469445b3f94771033
+      internalID: 4398024456299753911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 819
+        width: 46
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9513aec93165f746bfa4a30b55cbfe1
+      internalID: 6613896282648350188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 820
+        width: 65
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e7b28ba9177764ab2c0e1388d8357b
+      internalID: 5079651113284066163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_7
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 820
+        width: 55
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7db57a83781fcb4d8d611e1bc0e2fe1
+      internalID: -1347029299065904624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 697
+        width: 61
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997e10a34d0141a4a89528b5e3fcc3a6
+      internalID: -8683546582417814784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_9
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 696
+        width: 46
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10595211a2113594fa5269fad8c057c3
+      internalID: 4307827807737587825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_10
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 696
+        width: 46
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c038c0b6cc5d3429c5820da26bb59d
+      internalID: -4565359189917919096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_11
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 698
+        width: 46
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aed87d838ca2446a0f244f7d393d9c
+      internalID: 1003893939322413287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 566
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf11162ee11b2d4ba732e4cdfafa4f8
+      internalID: 2516307645687759154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_13
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 566
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859f3997c2660da41b54242d77fb95a5
+      internalID: 7694926325285335556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_14
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 566
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4268cba6fc533c4a9de8e5b37bb7027
+      internalID: 7600034641771445644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_15
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 566
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd72114c089ac2d4fa220af0f36e83fc
+      internalID: 8818768758262831439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_16
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 415
+        width: 68
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f479eeb315d053645b75fa00ab51ff9b
+      internalID: -8956426219659501525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_17
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 413
+        width: 87
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7398bc1c4a2b0644993bc810eeff2dfe
+      internalID: -2523604484977463976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_18
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 415
+        width: 89
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103bd9888deb6514fb16518c1d2963fe
+      internalID: 8989755290768181239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_19
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 413
+        width: 63
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71265139ca0b624478a8ce3d2cdfd739
+      internalID: -4939712277337387841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_20
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 271
+        width: 51
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa4a2640c6d1064abcaca0d5ca8af99
+      internalID: 7413664494046825663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_21
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 272
+        width: 54
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfaec0254f868844871e28353e5dacf
+      internalID: -5370566820259673357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_22
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 271
+        width: 66
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786ae30acb47c9d40ba6b98982876c84
+      internalID: 5059460720366207482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_23
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 271
+        width: 112
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ea3c4a0e70edf4eb9da779b37d538c
+      internalID: 2888539358951426354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 105
+        width: 67
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbcec4103234c342b2f4c4908e612a1
+      internalID: -1509536903061161180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navern_Movement_Fix_25
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 101
+        width: 86
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8110e95268ee3046862f7a19769f4da
+      internalID: 3507223333330604362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
